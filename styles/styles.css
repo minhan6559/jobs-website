@@ -536,6 +536,7 @@ button {
 .job__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 24rem;
   gap: 3.6rem;
   margin: 1.2rem 3.6rem;
   padding: 3.6rem 1.2rem;
