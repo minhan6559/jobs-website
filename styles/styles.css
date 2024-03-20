@@ -416,6 +416,20 @@ button {
   font-size: 4.2rem;
   font-weight: 500;
   color: var(--primary-color);
+  transition: .4s;
+}
+
+.about__heading:hover {
+  transform: translateY(-.5rem);
+}
+
+.about__heading a {
+  text-decoration: none;
+}
+
+/* disable color change when visit the link */
+.about__heading a:visited {
+  color: var(--primary-color);
 }
 
 .about__desc {
