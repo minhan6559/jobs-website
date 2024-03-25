@@ -1151,7 +1151,7 @@ button {
 /* Team Grid */
 .team__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted for responsiveness */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
@@ -1161,7 +1161,7 @@ button {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
               0 4px 6px -2px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  margin-bottom: 2rem; /* Adjusted for more consistent spacing */
+  margin-bottom: 3.5rem;
 }
 
 .team__member img {
@@ -1176,17 +1176,17 @@ button {
 
 .team__member-info h3 {
   margin: 0;
-  font-size: 2rem; /* Adjust font size for responsiveness */
+  font-size: 2rem;
 }
 
 .team__member-info p {
   margin: 0;
-  font-size: 1.3rem; /* Smaller font size for the job title */
+  font-size: 1.3rem;
 }
 
 .team__member p {
   padding: 1.2rem;
-  margin: 0; /* Ensures no extra space is added at the bottom */
+  margin: 0; 
 }
 
 /* Join Team Banner */
@@ -1200,12 +1200,8 @@ button {
   border-radius: 1.2rem;
   max-width: 70rem;
   margin: 0 auto;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
   transition: 0.4s;
-}
-
-.join-team__banner:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
 }
 
 .join-team__banner h1 {
@@ -1286,7 +1282,15 @@ button {
   
   /* Team Members */
   .team__grid {
-    grid-template-columns: 2fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .team__member {
+    flex: 0 0 calc(50% - 0.75rem);
+    margin-bottom: 1.5rem;
   }
 
   /* Join Team Banner */
