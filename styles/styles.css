@@ -1030,5 +1030,222 @@ button {
 
 /* Brodie */
 
+/* About Hero */ /* a portion of the core code was created with assistance from Minh An Nguyen */
+.about-hero{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.about-hero__main, .about-hero__collage {
+  flex: 1;
+}
+
+.about-hero__main {
+  width: 50%;
+  margin: 0 3.6rem 0 12.0rem;
+  padding: 2.4rem 0;
+}
+
+.about-hero__inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-hero__main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin: 1.2rem;
+}
+
+.about-hero__main-desc {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: 200;
+}
+
+.about-hero__text {
+  outline: none;
+  border: none;
+  padding: .4rem 1.2rem .6rem 6.4rem;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) .0rem .7rem 2.9rem .0rem;
+  border-radius: 99.9rem;
+  height: 5.2rem;
+  width: 22.0rem;
+  transition: .4s;
+}
+
+/* Hero Collage */ /* core code was created with assistance from Minh An Nguyen */
+.about-hero__collage {
+  width: 50%;
+  padding: 3.2rem;
+  user-select: none;
+}
+
+.about-hero__collage__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.4rem;
+}
+
+/* Hero Collage - Row */ /* core code was created with assistance from Minh An Nguyen */
+.about-hero__collage__row1 {
+  display: flex;
+  align-items: end;
+  gap: 3rem;
+}
+
+.about-hero__collage__row2 {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 4.2rem;
+  padding: 0 4.2rem;
+}
+
+.about-hero__collage__img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1.6rem;
+  transition: .4s;
+}
+
+.about-hero__collage__img:hover {
+  transform: translateY(-.5rem);
+}
+
+.about-hero__collage__row1 .about-hero__collage__img:nth-child(1) {
+  width: 13.5rem;
+  height: 9.0rem;
+}
+
+.about-hero__collage__row1 .about-hero__collage__img:nth-child(2) {
+  width: 15.0rem;
+  height: 12.0rem;
+}
+
+.about-hero__collage__row1 .about-hero__collage__img:nth-child(3) {
+  width: 23.5rem;
+  height: 8.5rem;
+}
+
+.about-hero__collage__row2 .about-hero__collage__img:nth-child(1) {
+  width: 25.0rem;
+  height: 13.0rem;
+}
+
+.about-hero__collage__row2 .about-hero__collage__img:nth-child(2) {
+  width: 20.5.0rem;
+  height: 11.0rem;
+}
+
+/* Team Grid */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+/* Team Members */
+.team__member {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.team__member img {
+  width: 100%;
+  display: block;
+}
+.team__member p {
+  padding: 1.5rem;
+}
+.text__center {
+  text-align: center;
+}
+.join-team__button {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-top: 3rem;
+}
+.join-team__button:hover {
+  background-color: #333333;
+}
+
+/* Responsive */
+/* Tablet */
+@media screen and (min-width:768px) and (max-width:991.98px) {
+  /* Hero */
+  
+  /* Collage */
+  .about-hero__collage__inner {
+    row-gap: 2.4rem;
+  }
+
+  .about-hero__collage__row1 {
+    gap: 1.2rem;
+    justify-content: space-around;
+  }
+
+  .about-hero__collage__row2 {
+    gap: 1.2rem;
+  }
+
+  .about-hero__collage__row1 .about-hero__collage__img:nth-child(1) {
+    width: 20.0rem;
+    height: 12.0rem;
+  }
+
+  .about-hero__collage__row1 .about-hero__collage__img:nth-child(2) {
+    display: none;
+  }
+
+  .about-hero__collage__row1 .about-hero__collage__img:nth-child(3) {
+    display: none;
+  }
+
+  .about-hero__collage__row2 .about-hero__collage__img:nth-child(1) {
+    width: 20.0rem;
+    height: 12.0rem;
+  }
+
+  .about-hero__collage__row2 .about-hero__collage__img:nth-child(2) {
+    width: 18.0rem;
+    height: 11.0rem;
+  }
+  
+  /* Team Members */
+  .team__grid {
+    grid-template-columns: 2fr;
+  }
+
+}
+
+/* Mobile */
+@media screen and (max-width:767.98px) {
+  
+  /* Hero */
+  
+  /* Collage */
+  .about-hero__collage {
+    display: none;
+  }
+
+  /* Team Members */
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 
 /* Dash */
