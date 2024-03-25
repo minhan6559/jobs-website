@@ -75,6 +75,10 @@ button {
   color: #fff;
 }
 
+.center {
+  text-align: center;
+}
+
 /* Header */
 .header {
   padding: .8rem 0 .8rem;
@@ -1036,6 +1040,7 @@ button {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  margin-bottom: 4rem;
 }
 
 .about-hero__main, .about-hero__collage {
@@ -1146,39 +1151,87 @@ button {
 /* Team Grid */
 .team__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted for responsiveness */
   gap: 1.5rem;
 }
-/* Team Members */
+
 .team__member {
   background-color: #ffffff;
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
               0 4px 6px -2px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  margin-bottom: 2rem; /* Adjusted for more consistent spacing */
 }
+
 .team__member img {
   width: 100%;
   display: block;
 }
-.team__member p {
-  padding: 1.5rem;
-}
-.text__center {
+
+.team__member-info {
+  padding: 1rem 1.5rem;
   text-align: center;
 }
-.join-team__button {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  display: inline-block;
-  margin-top: 3rem;
+
+.team__member-info h3 {
+  margin: 0;
+  font-size: 2rem; /* Adjust font size for responsiveness */
 }
-.join-team__button:hover {
-  background-color: #333333;
+
+.team__member-info p {
+  margin: 0;
+  font-size: 1.3rem; /* Smaller font size for the job title */
+}
+
+.team__member p {
+  padding: 1.2rem;
+  margin: 0; /* Ensures no extra space is added at the bottom */
+}
+
+/* Join Team Banner */
+.join-team__banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 1rem 2rem; 
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0rem 0.7rem 2.9rem;
+  border-radius: 1.2rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  transition: 0.4s;
+}
+
+.join-team__banner:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
+}
+
+.join-team__banner h1 {
+  font: 800 2.8rem/1.4 "Sora", sans-serif;
+  margin: 0; /* Remove margin to prevent excessive space */
+}
+
+/* Join Team Button */
+.banner__button-container {
+  margin: 0; /* Align button to the right */
+}
+
+.banner__button {
+  padding: 1rem 1.2rem;
+  border: 0.1rem solid #0166ff;
+  border-radius: 1.2rem;
+  background-color: transparent; /* Optional: Adjust based on design preference */
+  color: var(--primary-color); /* Ensure this variable is defined, or use a specific color */
+  text-decoration: none; /* Remove underline from link */
+  transition: all 0.15s ease-out; /* Smooth transition for hover effects */
+}
+
+.banner__button:hover {
+  background-color: hsl(230deg, 50%, 45%);
+  color: #fff;
+  border-radius: 1.6rem;
 }
 
 /* Responsive */
@@ -1236,6 +1289,10 @@ button {
     grid-template-columns: 2fr;
   }
 
+  /* Join Team Banner */
+  .join-team__banner {
+    max-width: 55rem;
+  }
 }
 
 /* Mobile */
@@ -1253,6 +1310,22 @@ button {
     grid-template-columns: 1fr;
   }
 
+  /* Join Team Banner */
+  .join-team__banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.7rem;
+    max-width: 400px;
+  }
+
+  .banner__text {
+    padding-right: 0; 
+  }
+
+  .banner__button-container {
+    margin-top: 3rem;
+    margin-bottom: 0.8rem;
+  }
 }
 
 
