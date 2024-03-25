@@ -1120,27 +1120,27 @@ button {
 
 .about-hero__collage__row1 .about-hero__collage__img:nth-child(1) {
   width: 13.5rem;
-  height: 9.0rem;
+  height: 20.0rem;
 }
 
 .about-hero__collage__row1 .about-hero__collage__img:nth-child(2) {
-  width: 15.0rem;
-  height: 12.0rem;
+  width: 28.5rem;
+  height: 24.5rem;
 }
 
 .about-hero__collage__row1 .about-hero__collage__img:nth-child(3) {
-  width: 23.5rem;
-  height: 8.5rem;
+  width: 14.5rem;
+  height: 17.0rem;
 }
 
 .about-hero__collage__row2 .about-hero__collage__img:nth-child(1) {
   width: 25.0rem;
-  height: 13.0rem;
+  height: 17.0rem;
 }
 
 .about-hero__collage__row2 .about-hero__collage__img:nth-child(2) {
-  width: 20.5.0rem;
-  height: 11.0rem;
+  width: 35rem;
+  height: 28.0rem;
 }
 
 /* Team Grid */
@@ -1182,6 +1182,13 @@ button {
 }
 
 /* Responsive */
+/* Collage Rule */
+@media screen and (max-width:1260px) {
+  .about-hero__collage__row1 .about-hero__collage__img:nth-child(3) {
+    display: none;
+  }
+}
+
 /* Tablet */
 @media screen and (min-width:768px) and (max-width:991.98px) {
   /* Hero */
@@ -1201,12 +1208,13 @@ button {
   }
 
   .about-hero__collage__row1 .about-hero__collage__img:nth-child(1) {
-    width: 20.0rem;
-    height: 12.0rem;
+    width: 18.0rem;
+    height: 20.0rem;
   }
 
   .about-hero__collage__row1 .about-hero__collage__img:nth-child(2) {
-    display: none;
+    width: 20.0rem;
+    height: 15.0rem;
   }
 
   .about-hero__collage__row1 .about-hero__collage__img:nth-child(3) {
@@ -1215,12 +1223,12 @@ button {
 
   .about-hero__collage__row2 .about-hero__collage__img:nth-child(1) {
     width: 20.0rem;
-    height: 12.0rem;
+    height: 18.0rem;
   }
 
   .about-hero__collage__row2 .about-hero__collage__img:nth-child(2) {
     width: 18.0rem;
-    height: 11.0rem;
+    height: 16.0rem;
   }
   
   /* Team Members */
