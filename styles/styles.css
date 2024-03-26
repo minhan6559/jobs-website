@@ -1170,7 +1170,8 @@ button {
   width: 100%;
   display: block;
   transition: filter 0.3s ease;
-  filter: blur(4px);
+  filter: blur(1.7px);
+  max-height: 400px;
 }
 
 .team__member-info {
@@ -1206,10 +1207,16 @@ button {
   transition-delay: 0.3s;
 }
 
-.team__member-info h3, .team__member-info p {
+.team__member-info h3 {
   margin: 0;
   font-size: 2rem;
-  padding: 0 1.2rem; 
+  font-weight: 200rem; 
+}
+
+.team__member-info p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 1;
 }
 
 .team__member p {
@@ -1248,8 +1255,7 @@ button {
   transition: opacity 0.5s ease 0s, transform 0.5s ease 0s;
 }
 
-.team__member:hover .team__member-info,
-.team__member:hover img {
+.team__member:hover .team__member-info {
   opacity: 0;
 }
 
