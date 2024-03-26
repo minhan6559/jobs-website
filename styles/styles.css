@@ -201,24 +201,25 @@ button {
   position: relative;
 }
 
-.hero__search:hover .hero__text {
+.hero__text:hover {
   box-shadow: rgba(0, 0, 0, 0.35) .0rem .5rem 1.5rem;
 }
 
 .hero__text {
   outline: none;
   border: none;
-  padding: .4rem 1.2rem .6rem 6.4rem;
+  padding: 1.3rem 1.2rem .6rem 6.4rem;
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) .0rem .7rem 2.9rem .0rem;
   border-radius: 99.9rem;
   height: 5.2rem;
-  width: 22.0rem;
+  width: 19.0rem;
   transition: .4s;
 }
 
 .hero__btn {
   position: absolute;
+  top: .8rem;
   left: .8rem;
   background-color: #4068b4;
   border: none;
@@ -227,6 +228,10 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 99.9rem;
+}
+
+.hero__btn:hover {
+  cursor: pointer;
 }
 
 .hero__btn svg {
@@ -1034,8 +1039,9 @@ button {
 
 /* Brodie */
 
-/* About Hero */ /* a portion of the core code was created with assistance from Minh An Nguyen */
-.about-hero{
+/* About Hero */
+/* a portion of the core code was created with assistance from Minh An Nguyen */
+.about-hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1043,7 +1049,8 @@ button {
   margin-bottom: 4rem;
 }
 
-.about-hero__main, .about-hero__collage {
+.about-hero__main,
+.about-hero__collage {
   flex: 1;
 }
 
@@ -1084,7 +1091,8 @@ button {
   transition: .4s;
 }
 
-/* Hero Collage */ /* core code was created with assistance from Minh An Nguyen */
+/* Hero Collage */
+/* core code was created with assistance from Minh An Nguyen */
 .about-hero__collage {
   width: 50%;
   padding: 3.2rem;
@@ -1097,7 +1105,8 @@ button {
   row-gap: 3.4rem;
 }
 
-/* Hero Collage - Row */ /* core code was created with assistance from Minh An Nguyen */
+/* Hero Collage - Row */
+/* core code was created with assistance from Minh An Nguyen */
 .about-hero__collage__row1 {
   display: flex;
   align-items: end;
@@ -1160,7 +1169,7 @@ button {
   background-color: #ffffff;
   border-radius: 1.2rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   max-height: 250px;
   transition: max-height 0.5s ease;
@@ -1191,13 +1200,13 @@ button {
 
 .team__member-content {
   padding: 0.6rem;
-  margin: 0; 
+  margin: 0;
   text-align: justify;
   line-height: 1.6;
   font-size: 1.48rem;
   font-weight: 400;
   max-width: 90%;
-  margin-left: 0.5rem; 
+  margin-left: 0.5rem;
   margin-right: 0.5rem;
   transform-origin: top;
   opacity: 0;
@@ -1206,15 +1215,16 @@ button {
   transition-delay: 0.3s;
 }
 
-.team__member-info h3, .team__member-info p {
+.team__member-info h3,
+.team__member-info p {
   margin: 0;
   font-size: 2rem;
-  padding: 0 1.2rem; 
+  padding: 0 1.2rem;
 }
 
 .team__member p {
   padding: 1.2rem;
-  margin: 0; 
+  margin: 0;
 }
 
 /* Team Grid Visual Effects*/
@@ -1224,17 +1234,17 @@ button {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 75%; 
+  height: 75%;
   transition: opacity 0.9s ease;
-  opacity: 1; 
+  opacity: 1;
 }
 
 .team__member:hover::after {
-  opacity: 0; 
+  opacity: 0;
 }
 
 .team__member:hover img {
-  filter: none; 
+  filter: none;
 }
 
 .team__member:hover .team__member-info {
@@ -1262,8 +1272,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
-  padding: 1rem 2rem; 
+  justify-content: center;
+  padding: 1rem 2rem;
   background-color: #fff;
   max-width: 40rem;
   margin: 0 auto;
@@ -1290,9 +1300,9 @@ button {
   border: 0.1rem solid #0166ff;
   border-radius: 1.2rem;
   margin-top: 1.3rem;
-  background-color: hsl(230deg, 50%, 45%); 
-  color: white; 
-  text-decoration: none; 
+  background-color: hsl(230deg, 50%, 45%);
+  color: white;
+  text-decoration: none;
   transition: all 0.15s ease-out;
 }
 
@@ -1313,7 +1323,7 @@ button {
 /* Tablet */
 @media screen and (min-width:768px) and (max-width:991.98px) {
   /* Hero */
-  
+
   /* Collage */
   .about-hero__collage__inner {
     row-gap: 2.4rem;
@@ -1351,7 +1361,7 @@ button {
     width: 18.0rem;
     height: 16.0rem;
   }
-  
+
   /* Team Members */
   .team__grid {
     display: flex;
@@ -1373,9 +1383,9 @@ button {
 
 /* Mobile */
 @media screen and (max-width:767.98px) {
-  
+
   /* Hero */
-  
+
   /* Collage */
   .about-hero__collage {
     display: none;
@@ -1395,7 +1405,7 @@ button {
   }
 
   .banner__text {
-    padding-right: 0; 
+    padding-right: 0;
   }
 
   .banner__button-container {
