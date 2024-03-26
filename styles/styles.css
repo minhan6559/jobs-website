@@ -1115,7 +1115,7 @@ button {
 .about-hero__collage__img {
   width: 100%;
   object-fit: cover;
-  border-radius: 1.6rem;
+  border-radius: 1.2rem;
   transition: .4s;
 }
 
@@ -1156,32 +1156,60 @@ button {
 }
 
 .team__member {
+  position: relative;
   background-color: #ffffff;
-  border-radius: 0.5rem;
+  border-radius: 1.2rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
               0 4px 6px -2px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  margin-bottom: 3.5rem;
+  max-height: 250px;
+  transition: max-height 0.5s ease;
 }
 
 .team__member img {
   width: 100%;
   display: block;
+  transition: filter 0.3s ease;
+  filter: blur(4px);
 }
 
 .team__member-info {
-  padding: 1rem 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  transition: opacity 0.3s ease;
 }
 
-.team__member-info h3 {
+.team__member-content {
+  padding: 0.6rem;
+  margin: 0; 
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1.48rem;
+  font-weight: 400;
+  max-width: 90%;
+  margin-left: 0.5rem; 
+  margin-right: 0.5rem;
+  transform-origin: top;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  transition-delay: 0.3s;
+}
+
+.team__member-info h3, .team__member-info p {
   margin: 0;
   font-size: 2rem;
-}
-
-.team__member-info p {
-  margin: 0;
-  font-size: 1.3rem;
+  padding: 0 1.2rem; 
 }
 
 .team__member p {
@@ -1189,44 +1217,88 @@ button {
   margin: 0; 
 }
 
+/* Team Grid Visual Effects*/
+.team__member::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75%; 
+  transition: opacity 0.9s ease;
+  opacity: 1; 
+}
+
+.team__member:hover::after {
+  opacity: 0; 
+}
+
+.team__member:hover img {
+  filter: none; 
+}
+
+.team__member:hover .team__member-info {
+  opacity: 0;
+}
+
+
+.team__member:hover .team__member-content {
+  transform: scaleY(1);
+  opacity: 1;
+  transition: opacity 0.5s ease 0s, transform 0.5s ease 0s;
+}
+
+.team__member:hover .team__member-info,
+.team__member:hover img {
+  opacity: 0;
+}
+
+.team__member:hover {
+  max-height: 1000px;
+}
+
 /* Join Team Banner */
 .join-team__banner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: center; 
   padding: 1rem 2rem; 
   background-color: #fff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0rem 0.7rem 2.9rem;
-  border-radius: 1.2rem;
-  max-width: 70rem;
+  max-width: 40rem;
   margin: 0 auto;
-  margin-bottom: 6rem;
+  margin-top: 10rem;
+  margin-bottom: 7.5rem;
   transition: 0.4s;
 }
 
 .join-team__banner h1 {
   font: 800 2.8rem/1.4 "Sora", sans-serif;
-  margin: 0; /* Remove margin to prevent excessive space */
+  margin: 0;
 }
 
 /* Join Team Button */
 .banner__button-container {
-  margin: 0; /* Align button to the right */
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
 .banner__button {
+  align-items: center;
   padding: 1rem 1.2rem;
   border: 0.1rem solid #0166ff;
   border-radius: 1.2rem;
-  background-color: transparent; /* Optional: Adjust based on design preference */
-  color: var(--primary-color); /* Ensure this variable is defined, or use a specific color */
-  text-decoration: none; /* Remove underline from link */
-  transition: all 0.15s ease-out; /* Smooth transition for hover effects */
+  margin-top: 1.3rem;
+  background-color: hsl(230deg, 50%, 45%); 
+  color: white; 
+  text-decoration: none; 
+  transition: all 0.15s ease-out;
 }
 
 .banner__button:hover {
-  background-color: hsl(230deg, 50%, 45%);
-  color: #fff;
+  background-color: transparent;
+  color: var(--primary-color);
   border-radius: 1.6rem;
 }
 
