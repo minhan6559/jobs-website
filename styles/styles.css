@@ -1169,7 +1169,7 @@ button {
 .team__member img {
   width: 100%;
   display: block;
-  transition: filter 0.3s ease;
+  transition: filter 0.1s ease;
   filter: blur(1.7px);
   max-height: 400px;
 }
