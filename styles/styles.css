@@ -474,17 +474,17 @@ button {
 }
 
 .about__content>.about__team:nth-of-type(1) {
-  background: url(../images/about_02.jpg) no-repeat 50% / cover;
+  background: url(../images/MinhAnNguyen.JPG) no-repeat 50% / cover;
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
 .about__content>.about__team:nth-of-type(2) {
-  background: url(../images/about_03.jpg) no-repeat 50% / cover;
+  background: url(../images/about_02.jpg) no-repeat 50% / cover;
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
 .about__content>.about__team:nth-of-type(3) {
-  background: url(../images/about_04.jpg) no-repeat 50% / cover;
+  background: url(../images/brodie_hughes.jpg) no-repeat 50% / cover;
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
@@ -1168,12 +1168,12 @@ button {
 }
 
 .team__member img {
-  min-width: 150px; 
-  min-height: 100px; 
-  width: auto; 
-  height: auto; 
+  min-width: 150px;
+  min-height: 100px;
+  width: auto;
+  height: auto;
   max-width: 100%;
-  max-height: 100%; 
+  max-height: 100%;
   width: 100%;
   display: block;
   transition: filter 0.1s ease;
