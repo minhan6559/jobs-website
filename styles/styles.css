@@ -1555,15 +1555,15 @@ form textarea {
   border-radius: 1.2rem;
   box-sizing: border-box;
   padding-left: 1.1rem;
+  font-family: "Poppins", sans-serif;;
   font-size: 1.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 .form-input-container {
-  padding: 0.15rem;
+  padding: 1.1rem;
 }
-
 
 form input[type="text"]:focus,
 form input[type="email"]:focus,
@@ -1594,22 +1594,63 @@ form legend {
   font-weight: bold;
 }
 
-/* Button Style */
-form input[type="submit"] {
-  padding: 1rem 1.2rem;
-  margin-top: 1.3rem;
-  border: none;
-  border-radius: 1.2rem;
+
+/* Skills */
+.skills__field label:hover {
   background-color: hsl(230deg, 50%, 45%);
   color: white;
-  text-decoration: none;
-  transition: all 0.15s ease-out;
+  border-radius: 1.6rem;
+}
+
+.skill__input {
+  display: none;
+}
+
+.skill__label {
+  display: inline-block;
+  background-color: white;
+  border: .1rem solid #0166ff;
+  padding: 1rem 1.2rem;
+  margin: 4px;
+  border-radius: 1.2rem;
   cursor: pointer;
+  transition: border-radius 0.15s 0.15s ease-out, background 0.2s;
+  user-select: none;
+}
+
+.skill__input:checked + .skill__label {
+  background-color: hsl(230deg, 50%, 45%);
+  color: white;
+  border-radius: 1.6rem;
+}
+
+
+/* Button Style */
+.submit__btn-container {
+  text-align: center;
+}
+
+form input[type="submit"] {
+  background-color: hsl(230deg, 50%, 45%);
+  color: white;
+  border: .1rem solid #0166ff;
+  padding: 1rem 1.2rem;
+  margin: 4px;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: border-radius 0.15s 0.15s ease-out, background 0.2s;
+  user-select: none;
 }
 
 form input[type="submit"]:hover {
-  background-color: #014fcc;
+  background-color: white;
+  color: black;
 }
+
+#otherSkills {
+  height: 10rem;
+}
+
 
 /* Responsive Styles */
 /* Tablet */

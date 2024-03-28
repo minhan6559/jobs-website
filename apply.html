@@ -149,7 +149,7 @@
             
             <div class="form-input-container">
               <label for="jobRef">*Job Reference Number:</label>
-              <input type="text" id="jobRef" name="job_reference_number" pattern="[A-Za-z0-9]{5}" title="Exactly 5 alphanumeric characters" required>
+              <input type="text" id="jobRef" name="job_reference_number" pattern="[A-Za-z0-9]{5}" title="Exactly 5 alphanumeric characters" placeholder="e.g ABC12" required>
               <span class="error-message" id="jobRef-error"></span>
             </div>
             
@@ -212,37 +212,62 @@
             
             <div class="form-input-container">
               <label for="postcode">*Postcode:</label>
-              <input type="text" id="postcode" name="postcode" pattern="\d{4}" title="Exactly 4 digits" required>
+              <input type="text" id="postcode" name="postcode" pattern="\d{4}" title="Exactly 4 digits" placeholder="e.g 6330" required>
               <span class="error-message" id="postcode-error"></span>
             </div>
             
             <div class="form-input-container">
               <label for="email">*Email Address:</label>
-              <input type="email" id="email" name="email_address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address." required>
+              <input type="email" id="email" name="email_address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="e.g John@Smith.com" required>
               <span class="error-message" id="email-error"></span>
             </div>
             
             <div class="form-input-container">
               <label for="phone">*Phone Number:</label>
-              <input type="tel" id="phone" name="phone_number" pattern="\d{8,12}|\d{8,12}( |\d)*" title="8 to 12 digits, or spaces" required>
+              <input type="tel" id="phone" name="phone_number" pattern="\d{8,12}|\d{8,12}( |\d)*" title="8 to 12 digits, or spaces" placeholder="e.g 0411222333" required>
               <span class="error-message" id="phone-error"></span>
             </div>
             
             <div class="form-input-container">
-              <fieldset>
-                <legend>*Skills:</legend>
-                <label><input type="checkbox" name="skills" value="project_management"> Project Management</label>
-                <label><input type="checkbox" name="skills" value="data_analysis"> Data Analysis</label>
-                <label><input type="checkbox" name="skills" value="cloud_computing"> Cloud Computing</label>
-                <label><input type="checkbox" name="skills" value="digital_marketing"> Digital Marketing</label>
-                <label><input type="checkbox" name="skills" value="software_development"> Software Development</label>
-                <label><input type="checkbox" name="skills" value="web_development"> Web Development</label>
-                <label><input type="checkbox" name="skills" value="it_service_management"> IT Service Management</label>
-                <label><input type="checkbox" name="skills" value="network_administration"> Network Administration</label>
-                <label><input type="checkbox" name="skills" value="user_experience_design"> User Experience (UX) Design</label>
-                <label><input type="checkbox" name="skills" value="business_intelligence"> Business Intelligence</label>
-                <label><input type="checkbox" name="skills" value="other"> Other skills...</label>
-              </fieldset>
+              <div class="skills__field">
+                <fieldset>
+                  <legend>*Skills:</legend>
+
+                  <input type="checkbox" id="project_management" name="skills" value="project_management" class="skill__input">
+                  <label for="project_management" class="skill__label">Project Management</label>
+                  
+                  <input type="checkbox" id="data_analysis" name="skills" value="data_analysis" class="skill__input">
+                  <label for="data_analysis" class="skill__label">Data Analysis</label>
+                  
+                  <input type="checkbox" id="cloud_computing" name="skills" value="cloud_computing" class="skill__input">
+                  <label for="cloud_computing" class="skill__label">Cloud Computing</label>
+                  
+                  <input type="checkbox" id="digital_marketing" name="skills" value="digital_marketing" class="skill__input">
+                  <label for="digital_marketing" class="skill__label">Digital Marketing</label>
+                  
+                  <input type="checkbox" id="software_development" name="skills" value="software_development" class="skill__input">
+                  <label for="software_development" class="skill__label">Software Development</label>
+                  
+                  <input type="checkbox" id="web_development" name="skills" value="web_development" class="skill__input">
+                  <label for="web_development" class="skill__label">Web Development</label>
+                  
+                  <input type="checkbox" id="it_service_management" name="skills" value="it_service_management" class="skill__input">
+                  <label for="it_service_management" class="skill__label">IT Service Management</label>
+                  
+                  <input type="checkbox" id="network_administration" name="skills" value="network_administration" class="skill__input">
+                  <label for="network_administration" class="skill__label">Network Administration</label>
+                  
+                  <input type="checkbox" id="user_experience_design" name="skills" value="user_experience_design" class="skill__input">
+                  <label for="user_experience_design" class="skill__label">User Experience Design</label>
+                  
+                  <input type="checkbox" id="business_intelligence" name="skills" value="business_intelligence" class="skill__input">
+                  <label for="business_intelligence" class="skill__label">Business Intelligence</label>
+                  
+                  <input type="checkbox" id="other" name="skills" value="other" class="skill__input">
+                  <label for="other" class="skill__label">Other skills...</label>
+
+                </fieldset>
+              </div>
             </div>
             
             <div class="form-input-container">
@@ -250,7 +275,9 @@
               <textarea id="otherSkills" name="other_skills"></textarea>
             </div>
             
-            <input type="submit" value="Apply">
+            <div class="submit__btn-container">
+              <input type="submit" value="Apply" class="submit__btn">
+            </div>
           </form>
           
         </div>
