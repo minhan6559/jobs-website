@@ -1597,9 +1597,7 @@ form legend {
 
 /* Skills */
 .skills__field label:hover {
-  background-color: hsl(230deg, 50%, 45%);
-  color: white;
-  border-radius: 1.6rem;
+  border-radius: 2rem;
 }
 
 .skill__input {
