@@ -86,7 +86,8 @@ table {
   margin-left: 1.5rem;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ddd;
   text-align: left;
   padding: 8px;
@@ -912,6 +913,7 @@ th {
   /* Jobs */
   .job__list {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 240px);
   }
 }
 
@@ -1046,6 +1048,7 @@ th {
 
   .job__list {
     grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 240px);
   }
 
   /* Footer */
@@ -1102,14 +1105,14 @@ th {
   padding-left: 1.5rem;
 }
 
-.team-definition-list dt { 
+.team-definition-list dt {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .team-definition-list dd {
-  margin-left: 2rem; 
-  margin-bottom: 1rem; 
+  margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 
 
@@ -1273,7 +1276,7 @@ th {
   margin: 0;
 }
 
-      /* Team Grid Visual Effects*/
+/* Team Grid Visual Effects*/
 .team__member::after {
   content: "";
   position: absolute;
@@ -1312,7 +1315,7 @@ th {
   max-height: 1000px;
 }
 
-    /* Join Team Banner */
+/* Join Team Banner */
 .join-team__banner {
   display: flex;
   flex-direction: column;
@@ -1332,7 +1335,7 @@ th {
   margin: 0;
 }
 
-    /* Join Team Button */
+/* Join Team Button */
 .banner__button-container {
   display: flex;
   align-items: center;
@@ -1366,12 +1369,13 @@ th {
 
 /* Tablet */
 @media screen and (min-width:768px) and (max-width:991.98px) {
+
   /* Hero */
   .about-hero__main {
     width: 50%;
     margin: 0 3.6rem 0 3.6rem;
   }
-  
+
   /* Collage */
   .about-hero__collage__inner {
     row-gap: 2.4rem;
@@ -1455,13 +1459,14 @@ th {
     margin-left: 1.5rem;
     max-width: 85%;
   }
-  
-  th, td {
+
+  th,
+  td {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
   }
-  
+
   th {
     background-color: #f2f2f2;
   }
@@ -1507,7 +1512,7 @@ th {
 
 
 /* Form */
-.form{
+.form {
   margin-top: 3.5rem;
   margin-bottom: 3rem;
 }
@@ -1526,10 +1531,10 @@ form {
   margin-bottom: 1rem;
   background-color: #fff;
   border-radius: 1.2rem;
-  box-shadow: 
-    0 10px 15px -3px rgba(0, 0, 0, 0.1), 
-    0 -2px 5px -2px rgba(0, 0, 0, 0.2); 
-  max-width: 800px; 
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 -2px 5px -2px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -1556,7 +1561,7 @@ form textarea {
 }
 
 .form-input-container {
-  padding: 0.15rem; 
+  padding: 0.15rem;
 }
 
 
@@ -1616,10 +1621,10 @@ form input[type="submit"]:hover {
     margin-bottom: 1rem;
     background-color: #fff;
     border-radius: 1.2rem;
-    box-shadow: 
-      0 10px 15px -3px rgba(0, 0, 0, 0.1), 
-      0 -2px 5px -2px rgba(0, 0, 0, 0.2); 
-    max-width: 90%; 
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 -2px 5px -2px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
     margin: 0 auto;
   }
 }
@@ -1635,10 +1640,10 @@ form input[type="submit"]:hover {
 
   form {
     margin: 5%;
-    padding: 2.4rem 1.2rem; 
-    box-shadow: 
+    padding: 2.4rem 1.2rem;
+    box-shadow:
       0 0px 0px 0px rgba(0, 0, 0, 0),
-      0 0px 0px 0px rgba(0, 0, 0, 0); 
+      0 0px 0px 0px rgba(0, 0, 0, 0);
   }
 
   .about-hero__text-info,
