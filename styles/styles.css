@@ -79,6 +79,22 @@ button {
   text-align: center;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem; /* Adjust as needed */
+}
+
+th, td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
 /* Header */
 .header {
   padding: .8rem 0 .8rem;
@@ -1061,8 +1077,8 @@ button {
 
 .about-hero__main {
   width: 50%;
-  margin: 0 3.6rem 0 12.0rem;
-  padding: 2.4rem 0;
+  margin: 0 3.6rem 0 3.6rem;
+  padding: 3.2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1074,28 +1090,34 @@ button {
   align-items: center;
 }
 
-.about-hero__main-desc {
-  font-size: 1.4rem;
-  line-height: 1.2;
-  font-weight: 200;
-}
-
 /* Definition List */
 .team-definition-list {
-  margin-top: 2rem; /* Adds space above the list */
-  width: 100%; /* Ensures the list takes up the full width of its container */
+  margin-top: 2rem;
 }
 
-.team-definition-list dt { /* Styling for the term */
+.team-definition-list dt { 
   font-weight: bold;
-  margin-bottom: 0.5rem; /* Space between term and its description */
+  margin-bottom: 0.5rem;
 }
 
-.team-definition-list dd { /* Styling for the description */
-  margin-left: 2rem; /* Indent description for better readability */
-  margin-bottom: 1rem; /* Space between entries */
+.team-definition-list dd {
+  margin-left: 2rem; 
+  margin-bottom: 1rem; 
 }
 
+
+/* Email Button */
+.email__button {
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border: 0.1rem solid #0166ff;
+  border-radius: 1.2rem;
+  margin-top: 1.3rem;
+  background-color: hsl(230deg, 50%, 45%);
+  color: white;
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+}
 
 /* Hero Collage */
 /* core code was created with assistance from Minh An Nguyen */
@@ -1163,7 +1185,7 @@ button {
   height: 28.0rem;
 }
 
-     /* Team Grid */
+/* Team Grid */
 .team__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1306,7 +1328,6 @@ button {
 .banner__button-container {
   display: flex;
   align-items: center;
-  margin: 0;
 }
 
 .banner__button {
@@ -1338,7 +1359,11 @@ button {
 /* Tablet */
 @media screen and (min-width:768px) and (max-width:991.98px) {
   /* Hero */
-
+  .about-hero__main {
+    width: 50%;
+    margin: 0 3.6rem 0 3.6rem;
+  }
+  
   /* Collage */
   .about-hero__collage__inner {
     row-gap: 2.4rem;
@@ -1402,8 +1427,7 @@ button {
   /* Hero */
   .about-hero__main {
     width: 50%;
-    margin: 0 3.6rem 0 3.6rem;
-    margin-top: 4rem;
+    margin: 0 auto;
     padding: 2.4rem 0;
   }
 
@@ -1411,6 +1435,7 @@ button {
     width: 400px;
     text-align: left;
     padding: 5%;
+    margin: 5%;
   }
 
 
