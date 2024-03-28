@@ -82,7 +82,8 @@ button {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem; /* Adjust as needed */
+  margin-top: 1rem;
+  margin-left: 1.5rem;
 }
 
 th, td {
@@ -1098,6 +1099,7 @@ th {
 /* Definition List */
 .team-definition-list {
   margin-top: 2rem;
+  padding-left: 1.5rem;
 }
 
 .team-definition-list dt { 
@@ -1122,6 +1124,7 @@ th {
   color: white;
   text-decoration: none;
   transition: all 0.15s ease-out;
+  margin-left: 1.5rem;
 }
 
 /* Hero Collage */
@@ -1443,6 +1446,25 @@ th {
     margin: 5%;
   }
 
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    max-width: 85%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
 
   /* Collage */
   .about-hero__collage {
