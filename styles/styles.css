@@ -1058,8 +1058,13 @@ th {
   }
 }
 
+
+
+
+
 /* Brodie */
 
+/* About.html */
 /* About Hero */
 /* a portion of the core code was created with assistance from Minh An Nguyen */
 .about-hero {
@@ -1464,6 +1469,176 @@ th {
     margin-bottom: 0.8rem;
   }
 }
+
+
+
+
+
+/* Apply.html */
+/* Container */
+.form-container {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto 1rem; /* Adjust top margin as needed */
+  padding: 3.2rem;
+}
+
+
+/* Form */
+.form{
+  margin-top: 3.5rem;
+  margin-bottom: 3rem;
+}
+
+.job__title h1 {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font: 800 5rem/1.4 "Sora", sans-serif;
+  margin-top: 0.5%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+    0 -2px 5px -2px rgba(0, 0, 0, 0.2); 
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+input:valid {
+  border: 2px solid green;
+}
+
+input:required:invalid {
+  border: 2px solid orange;
+}
+
+
+/* Elements Style */
+form label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 1.2rem;
+  box-sizing: border-box;
+  padding-left: 1.1rem;
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.form-input-container {
+  padding: 0.15rem; 
+}
+
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #0166ff;
+  outline: none;
+}
+
+
+/* Radio Buttons and Checkboxes Style */
+form input[type="radio"],
+form input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* Form Fieldset and Legend Style */
+form fieldset {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  margin-top: 1rem;
+}
+
+form legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+}
+
+/* Button Style */
+form input[type="submit"] {
+  padding: 1rem 1.2rem;
+  margin-top: 1.3rem;
+  border: none;
+  border-radius: 1.2rem;
+  background-color: hsl(230deg, 50%, 45%);
+  color: white;
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #014fcc;
+}
+
+/* Responsive Styles */
+/* Tablet */
+@media screen and (min-width:768px) and (max-width:991.98px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 
+      0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+      0 -2px 5px -2px rgba(0, 0, 0, 0.2); 
+    max-width: 90%; 
+    margin: 0 auto;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767.98px) {
+  .job__title h1 {
+    text-align: center;
+    margin-bottom: 1.8rem;
+    font: 800 3rem/1.4 "Sora", sans-serif;
+    margin-bottom: 3rem;
+  }
+
+  form {
+    margin: 5%;
+    padding: 2.4rem 1.2rem; 
+    box-shadow: 
+      0 0px 0px 0px rgba(0, 0, 0, 0),
+      0 0px 0px 0px rgba(0, 0, 0, 0); 
+  }
+
+  .about-hero__text-info,
+  .join-team__banner {
+    padding: 1.2rem; /* Adjust padding for other elements */
+  }
+}
+
+
+
 
 
 /* Dash */
