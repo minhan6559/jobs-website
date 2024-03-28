@@ -1624,6 +1624,11 @@ form legend {
   border-radius: 1.6rem;
 }
 
+.skill__input:checked + .skill__label:hover {
+  background-color: hsl(230deg, 50%, 50%);
+  box-shadow: 0 0 8px hsl(230deg, 50%, 45%);
+  border-color: hsl(230deg, 50%, 50%);
+}
 
 /* Button Style */
 .submit__btn-container {
