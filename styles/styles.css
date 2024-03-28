@@ -495,7 +495,7 @@ th {
 }
 
 .about__content>.about__team:nth-of-type(2) {
-  background: url(../images/about_02.jpg) no-repeat 50% / cover;
+  background: url(../images/dashiel_rao.jpg) no-repeat 50% / cover;
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
