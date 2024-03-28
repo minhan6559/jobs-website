@@ -1479,7 +1479,7 @@ th {
 .form-container {
   position: relative;
   max-width: 800px;
-  margin: 2rem auto 1rem; /* Adjust top margin as needed */
+  margin: 2rem auto 1rem;
   padding: 3.2rem;
 }
 
@@ -1633,7 +1633,7 @@ form input[type="submit"]:hover {
 
   .about-hero__text-info,
   .join-team__banner {
-    padding: 1.2rem; /* Adjust padding for other elements */
+    padding: 1.2rem;
   }
 }
 
