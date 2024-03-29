@@ -1226,6 +1226,7 @@ th {
   transition: filter 0.1s ease;
   filter: blur(1.7px);
   max-height: 400px;
+  object-fit: cover;
 }
 
 .team__member-info {
@@ -1555,7 +1556,8 @@ form textarea {
   border-radius: 1.2rem;
   box-sizing: border-box;
   padding-left: 1.1rem;
-  font-family: "Poppins", sans-serif;;
+  font-family: "Poppins", sans-serif;
+  ;
   font-size: 1.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1616,13 +1618,13 @@ form legend {
   user-select: none;
 }
 
-.skill__input:checked + .skill__label {
+.skill__input:checked+.skill__label {
   background-color: hsl(230deg, 50%, 45%);
   color: white;
   border-radius: 1.6rem;
 }
 
-.skill__input:checked + .skill__label:hover {
+.skill__input:checked+.skill__label:hover {
   background-color: hsl(230deg, 50%, 50%);
   box-shadow: 0 0 8px hsl(230deg, 50%, 45%);
   border-color: hsl(230deg, 50%, 50%);
