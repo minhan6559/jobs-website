@@ -1630,6 +1630,7 @@ form legend {
   background-color: hsl(230deg, 50%, 50%);
   box-shadow: 0 0 8px hsl(230deg, 50%, 45%);
   border-color: hsl(230deg, 50%, 50%);
+  border-radius: 2rem;
 }
 
 /* Button Style */
