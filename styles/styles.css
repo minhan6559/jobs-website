@@ -329,6 +329,7 @@ th {
   font-size: 2.0rem;
   font-weight: 300;
   margin-bottom: 1.2rem;
+  text-align: center;
 }
 
 .spotlight__desc {
@@ -413,6 +414,10 @@ th {
 }
 
 /* About */
+#about__mobile {
+  display: none;
+}
+
 .about {
   margin: 3.6rem;
   padding: 6.0rem 0;
@@ -1007,6 +1012,14 @@ th {
 
 
   /* About */
+  #about__mobile {
+    display: block;
+  }
+
+  #about__pc {
+    display: none;
+  }
+
   .about {
     margin: 0;
   }
@@ -1025,10 +1038,11 @@ th {
   }
 
   .about__content {
-    height: 56.0rem;
+    /* height: 56.0rem;
     margin-top: 14.0rem;
     flex-direction: column;
-    row-gap: 5.6rem;
+    row-gap: 5.6rem; */
+    display: none;
   }
 
   .about__name {
@@ -1228,6 +1242,7 @@ th {
   transition: filter 0.1s ease;
   filter: blur(1.7px);
   object-fit: cover;
+  object-position: center 20%;
 }
 
 .team__member-info {
@@ -1443,6 +1458,7 @@ th {
     width: 50%;
     margin: 0 auto;
     padding: 2.4rem 0;
+    align-items: center;
   }
 
   .about-hero__text-info {
@@ -1485,7 +1501,6 @@ th {
     padding-left: 5%;
   }
 
-
   /* Join Team Banner */
   .join-team__banner {
     flex-direction: column;
@@ -1498,10 +1513,6 @@ th {
     margin-bottom: 0.8rem;
   }
 }
-
-
-
-
 
 /* Apply.html */
 /* Container */
