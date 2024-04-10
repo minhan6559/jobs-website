@@ -1530,22 +1530,16 @@ th {
 }
 
 .banner__press {
-  align-items: center;
-  padding: 1rem 1.2rem;
-  border: 0.1rem solid #0166ff;
-  border-radius: 1.2rem;
-  margin-top: 1.3rem;
-  background-color: #008CBA;
-  color: white;
-  text-decoration: none;
-  transition: all 0.15s ease-out;
-  display: inline-block;
-  justify-content: center;
-  float: center;
-}
-
-.banner_press {
-	border-radius: 2px;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    border: 0.1rem solid #0166ff;
+    border-radius: 1.2rem;
+    margin-top: 1.3rem;
+    background-color: hsl(230deg, 50%, 45%);
+    color: white;
+    text-decoration: none;
+    transition: all 0.15s ease-out;
+    margin-left: 1.5rem;
 }
 
 .banner__press:hover {
