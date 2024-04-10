@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apply</title>
+    <title>Jobs</title>
 
     <!-- Embed fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,10 +64,10 @@
                 <a href="./about.html">About</a>
               </li>
               <li class="navbar__item">
-                <a href="./jobs.html">Jobs</a>
+                <a href="#">Jobs</a>
               </li>
               <li class="navbar__item">
-                <a href="#">Apply</a>
+                <a href="./apply.html">Apply</a>
               </li>
               <li class="navbar__item">
                 <a href="./enhancements.html">Enhancements</a>
@@ -122,10 +122,10 @@
               <a href="./about.html">About</a>
             </li>
             <li class="navbar__item">
-              <a href="./jobs.html">Jobs</a>
+              <a href="#">Jobs</a>
             </li>
             <li class="navbar__item">
-              <a href="#">Apply</a>
+              <a href="./apply.html">Apply</a>
             </li>
             <li class="navbar__item">
               <a href="./enhancements.html">Enhancements</a>
@@ -138,151 +138,190 @@
       </div>
     </header>
 
-    <main>
-      <div class="form__container">
-        <!-- Form -->
-        <div class="form">
-          <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
-            <div class="job__title">
-              <h1>Job Application</h1>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="jobRef">*Job Reference Number:</label>
-              <input type="text" id="jobRef" name="job_reference_number" pattern="[A-Za-z0-9]{5}" title="Exactly 5 alphanumeric characters" placeholder="e.g ABC12" required>
-              <span class="error-message" id="jobRef-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="firstName">*First Name:</label>
-              <input type="text" id="firstName" name="first_name" pattern="[A-Za-z]{1,20}" title="Max 20 alpha characters" required>
-              <span class="error-message" id="firstName-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="lastName">*Last Name:</label>
-              <input type="text" id="lastName" name="last_name" pattern="[A-Za-z]{1,20}" title="Max 20 alpha characters" required>
-              <span class="error-message" id="lastName-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="dob">*Date of Birth:</label>
-              <input type="text" id="dob" name="date_of_birth" 
-              pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/\d{4}" 
-              title="Date format dd/mm/yyyy, e.g., 31/12/1999" placeholder="dd/mm/yyyy" required>
-              <span class="error-message" id="dob-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <fieldset>
-                <legend>*Gender:</legend>
-                <label><input type="radio" name="gender" value="male" required> Male</label>
-                <label><input type="radio" name="gender" value="female" required> Female</label>
-                <label><input type="radio" name="gender" value="other" required> Other</label>
-              </fieldset>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="address">*Street Address:</label>
-              <input type="text" id="address" name="street_address" maxlength="40" required>
-              <span class="error-message" id="address-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="suburb">*Suburb/Town:</label>
-              <input type="text" id="suburb" name="suburb_town" maxlength="40" required>
-              <span class="error-message" id="suburb-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="state">*State:</label>
-              <select id="state" name="state" required>
-                <option value="">Select a state</option>
-                <option value="NSW">NSW</option>
-                <option value="VIC">VIC</option>
-                <option value="QLD">QLD</option>
-                <option value="WA">WA</option>
-                <option value="SA">SA</option>
-                <option value="TAS">TAS</option>
-                <option value="ACT">ACT</option>
-                <option value="NT">NT</option>
-              </select>
-              <span class="error-message" id="state-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="postcode">*Postcode:</label>
-              <input type="text" id="postcode" name="postcode" pattern="\d{4}" title="Exactly 4 digits" placeholder="e.g 6330" required>
-              <span class="error-message" id="postcode-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="email">*Email Address:</label>
-              <input type="email" id="email" name="email_address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="e.g John@Smith.com" required>
-              <span class="error-message" id="email-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="phone">*Phone Number:</label>
-              <input type="tel" id="phone" name="phone_number" pattern="\d{8,12}|\d{8,12}( |\d)*" title="8 to 12 digits, or spaces" placeholder="e.g 0411222333" required>
-              <span class="error-message" id="phone-error"></span>
-            </div>
-            
-            <div class="form-input-container">
-              <div class="skills__field">
-                <fieldset>
-                  <legend>*Please select your skills:</legend>
-
-                  <input type="checkbox" id="project_management" name="skills" value="project_management" class="skill__input">
-                  <label for="project_management" class="skill__label">Project Management</label>
-                  
-                  <input type="checkbox" id="data_analysis" name="skills" value="data_analysis" class="skill__input">
-                  <label for="data_analysis" class="skill__label">Data Analysis</label>
-                  
-                  <input type="checkbox" id="cloud_computing" name="skills" value="cloud_computing" class="skill__input">
-                  <label for="cloud_computing" class="skill__label">Cloud Computing</label>
-                  
-                  <input type="checkbox" id="digital_marketing" name="skills" value="digital_marketing" class="skill__input">
-                  <label for="digital_marketing" class="skill__label">Digital Marketing</label>
-                  
-                  <input type="checkbox" id="software_development" name="skills" value="software_development" class="skill__input">
-                  <label for="software_development" class="skill__label">Software Development</label>
-                  
-                  <input type="checkbox" id="web_development" name="skills" value="web_development" class="skill__input">
-                  <label for="web_development" class="skill__label">Web Development</label>
-                  
-                  <input type="checkbox" id="it_service_management" name="skills" value="it_service_management" class="skill__input">
-                  <label for="it_service_management" class="skill__label">IT Service Management</label>
-                  
-                  <input type="checkbox" id="network_administration" name="skills" value="network_administration" class="skill__input">
-                  <label for="network_administration" class="skill__label">Network Administration</label>
-                  
-                  <input type="checkbox" id="user_experience_design" name="skills" value="user_experience_design" class="skill__input">
-                  <label for="user_experience_design" class="skill__label">User Experience Design</label>
-                  
-                  <input type="checkbox" id="business_intelligence" name="skills" value="business_intelligence" class="skill__input">
-                  <label for="business_intelligence" class="skill__label">Business Intelligence</label>
-                  
-                  <input type="checkbox" id="other" name="skills" value="other" class="skill__input">
-                  <label for="other" class="skill__label">Other skills...</label>
-
-                </fieldset>
-              </div>
-            </div>
-            
-            <div class="form-input-container">
-              <label for="otherSkills">Other Skills:</label>
-              <textarea id="otherSkills" name="other_skills"></textarea>
-            </div>
-            
-            <div class="submit__btn-container">
-              <input type="submit" value="Apply" class="submit__btn">
-            </div>
-          </form>
-          
-        </div>
-      </div>
-    </main>
+	<main>
+      <h1>Available Jobs</h1>
+	   <p>Here are the current <strong>job descriptions</strong> that <strong>YOU</strong> can apply for.</p>
+	   </br>
+	  <nav>
+		<p class="menu"><a href="#CSS">Cybersecurity Specialist</a></p>
+		<p class="menu"><a href="#DE">Data Engineer</a></p>
+		<p class="menu"><a href="#SE">Software Engineer</a></p>
+		<p class="menu"><a href="#ITSS">IT Support Specialist</a></p>
+	  </nav>
+	  <br />
+	  <section id="CSS">
+			<h2><strong>Cybersecurity Specialist (CSS)</strong></h2>
+			<aside>
+				<img src="cybersecurity-specialist.jpg" alt="Cybersecurity Specialist">
+			</aside>
+			<h3>Brief Description</h3>
+			<p>The Cybersecurity Specialist (CSS) is responsible for ensuring the security of the company's digital assets and infrastructure. They will design, implement, and maintain security measures to protect computer systems, networks, and data from cyber threats.</p>
+			<br />
+			<h3>Key Information</h3>
+			<p><strong>Position Description Reference Number:</strong> XY349</p>
+			<p><strong>Salary Range:</strong> AUD $90,000 - AUD $120,000 annually</p>
+			<p><strong>Reporting To:</strong> Chief Information Security Officer (CISO)</p>
+			<br />
+			<h3>Key responsibilities</h3>
+			<ul>
+				<li>* Conduct regular security assessments and audits to identify vulnerabilities and risks.<li>
+				<li>* Develop and implement security policies, procedures, and protocols.</li>
+				<li>* Monitor network traffic for unusual activity and investigate security breaches.</li>
+				<li>* Provide cybersecurity awareness training to employees.</li>
+				<li>* Stay updated on the latest security threats, trends, and technologies.</li>
+				<li>* Respond to and mitigate security incidents in a timely manner</li>
+			</ul>
+			<br />
+			<h3>Required Qualifications, Skills, Knowledge, and Attributes</h3>
+			<h4>Essential:</h4>
+			<ol>
+				<li>1. Bachelor's degree in Computer Science, Information Technology, or related field.</li>
+				<li>2. 3+ years of experience in cybersecurity.</li>
+				<li>3. Strong understanding of network protocols and security technologies.</li>
+				<li>4. Proficiency in security tools such as antivirus software etc.</li>
+				<li>5. Excellent problem-solving and analytical skills.</li>
+			</ol>
+			<h4>Preferable:</h4>
+			<ol>
+				<li>1. Professional certifications.</li>
+				<li>2. Familiarity with penetration testing tools and techniques.</li>
+				<li>3. Knowledge of cryptography and encryption protocols.</li>
+			</ol>
+		</section>
+		<br />
+		<br />
+		<section id="DE">
+			<h2><strong>Data Engineer (DE)</strong></h2>
+			<aside>
+				<img src="data-engineer.jpg" alt="Data Enginer">
+			</aside>
+			<h3>Brief Description</h3>
+			<p>The Data Engineer (DE) designs, creates, and looks after data pipelines and tools for analyzing data. They work with different teams to understand what's needed, analyze data, and offer insights to help with business decisions.</p>
+			<br />
+			<h3>Key Information</h3>
+			<p><strong>Position Descirption Reference Number:</strong> ZW782</p>
+			<p><strong>Salary Range:</strong> AUD $100,000 - AUD $130,000 annually</p>
+			<p><strong>Reporting To:</strong> Director of Data Anylitics</p>
+			<br />
+			<h3>Key Responsibilities</h3>
+			<ul>
+				<li>* Develop data models and algorithms to analyse large datasets.</li>
+				<li>* Build and maintain data pipelines to collect, process, and store data from various sources.</li>
+				<li>* Collaborate with business stakeholders to understand requirements and define use cases.</li>
+				<li>* Perform data mining and statistical analysis to identify trends and patterns.</li>
+				<li>* Optimise data storage and retrieval processes for performance and scalability.</li>
+				<li>* Stay updated on emerging technologies and best practices in data analytics.</li>
+			</ul>
+			<br />
+			<h3>Required Qualifications, Skills, Knowledge, and Attributes</h3>
+			<h4>Essential:</h4>
+			<ol> 
+				<li>1. Bachelor's degree in Computer Science, Statistics, or related field.</li>
+				<li>2. 3+ years of experience in data engineering or analytics.</li>
+				<li>3. Proficiency in SQL and one or more programming languages.</li>
+				<li>4. Strong understanding of data modelling concepts and database design.</li>
+				<li>5. Excellent communication and collaboration skills.</li>
+			</ol>
+			<h4>Preferable:</h4>
+			<ol>
+				<li>1. Master's degree or PhD in a relevant field.</li>
+				<li>2. Experience with machine learning algorithms and techniques.</li>
+				<li>3. Familiarity with data visualisation tools.</li>
+			</ol>
+		</section>
+		<br />
+		<br />
+		<section id="SE">
+			<h2>Software Engineer (SE)</h2>
+			<aside>
+				<img src="software-engineer.jpg" alt="Software Engineer">
+			</aside>
+			<h3>Brief Description</h3>
+			<p>The Software Engineer (SE) designs, builds, and takes care of software programs and systems. They work with different teams to understand what's needed, come up with solutions, and make sure the software they create meets the company's needs.</p>
+			<br />
+			<h3>Key Information</h3>
+			<p><strong>Position Description Reference Number:</strong> IT875</p>
+			<p><strong>Salary Range:</strong> AUD $90,000 - AUD $110,000 annually</p>
+			<p><strong>Reporting To:</strong> Chief Technology Officer</p>
+			<br />
+			<h3>Key Responsiblities</h3>
+			<ul>
+				<li>* Designing and implementing software applications and features according to technical specifications and best practices.</li>
+				<li>* Collaborating with stakeholders to understand requirements and translate them into technical solutions.</li>
+				<li>* Writing clean, maintainable, and efficient code in programming languages such as Java, Python, or C++.</li>
+				<li>* Troubleshooting and debugging issues in existing software applications and implementing fixes and enhancements as needed.</li>
+			</ul>
+			<br />
+			<h3>Required Qualifications, Skills, Knowledge, and Attributes</h3>
+			<h4>Essentia:l</h4>
+			<ol>
+				<li>1. Bachelor's degree in Computer Science, Software Engineering, or related field.</li>
+				<li>2. 3+ years of experience in software development, with proficiency in one or more programming languages.</li>
+				<li>3. Strong problem-solving skills and attention to detail.</li>
+				<li>4. Excellent communication and collaboration skills.</li>
+				<li>5. Ability to work effectively in a team environment and independently.</li>
+			</ol>
+			<h4>Preferable:</h4>
+			<ol>
+				<li>1. Master's degree in Computer Science or related field.</li>
+				<li>2. nowledge of software development best practices.</li>
+			</ol>
+		</section>
+		<br />
+		<br />
+		<section id="ITSS">
+			<h2>IT Support Specialist (ITSS)</h2>
+			<aside>
+				<img src="support-specialist.jpg" alt="IT Support Specialist">
+			</aside>
+			<h3>Brief Description</h3>
+			<p>The IT Support Specialist (ITSS) is responsible for providing technical assistance and support to end-users within the organization. They troubleshoot hardware and software issues, install and configure software and hardware, and ensure that all IT-related systems are functioning smoothly.</p>
+			<br />
+			<h3>Key Information</h3>
+			<p><strong>Position Description Reference Number:</strong> IT532</p>
+			<p><strong>Salary Range:</strong> AUD $60,000 - AUD $80,000 annually</p>
+			<p><strong>Reporting To:</strong> IT Manager</p>
+			<br />
+			<h3>Key Responsibilities</h3>
+			<ul>
+				<li>* Providing technical assistance and support to end-users via phone, email, or in person.</li>
+				<li>* Troubleshooting hardware and software issues and escalating complex problems to appropriate personnel.</li>
+				<li>* Installing, configuring, and maintaining software applications and hardware devices.</li>
+				<li>* Assisting with IT-related projects, such as software upgrades and system migrations.</li>
+				<li>* Performing routine maintenance tasks, such as system updates and backups.</li>
+				<li>* Keeping abreast of technological advancements and recommending improvements to enhance IT operations.</li>
+			</ul>
+			<br />
+			<h3>Required Qualifications, Skills, Knowledge, and Attributes</h3>
+			<h4>Essential:</h4>
+			<ol>
+				<li>1. Diploma or certification in Information Technology or related field.</li>
+				<li>2. 2+ years of experience in IT support or a similar technical role.</li>
+				<li>3. Strong problem-solving skills and ability to work under pressure.</li>
+				<li>4. Excellent communication and interpersonal skills.</li>
+				<li>5. Proficiency in troubleshooting common hardware and software issues.</li>
+			</ol>
+			<h4>Preferable:</h4>
+			<ol>
+				<li>1. Bachelor's degree in Information Technology or related field.</li>
+				<li>2. Certification in relevant IT disciplines.</li>
+				<li>3. Experience with remote desktop support tools.</li>
+			</ol>
+		</section>
+		<br />
+		<br />
+		<div class="apply-team_banner">
+			<div class="baner_text">
+				<h2>Like What You See?</h2>
+			</div>
+			<div class="banner_press-container">
+				<div class="vertical-center">
+					<a href="./apply.html" class="banner_press">Apply Now!</a>
+				</div>
+			</div>
+		</div>
+		<br />
+	</main>
 
     <!-- Footer -->
     <footer class="footer">
