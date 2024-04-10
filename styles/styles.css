@@ -976,7 +976,6 @@ th {
   .spotlight__list:hover>.spotlight__item:not(:hover) {
     filter: none;
     opacity: 1;
-    transform: scale(1);
   }
 
   /* Workplace */
@@ -1755,15 +1754,14 @@ form input[type="submit"]:hover {
 .enhacement__heading {
   font-size: 3.2rem;
   font-weight: 800;
-  color: var(--primary-color);
+  color: black;
 }
 
 .enhacement__desc {
   font-size: 1.6rem;
   font-weight: 400;
   color: black;
-  text-align: left;
-  list-style-type: circle;
+  text-align: center;
 }
 
 .enhacement__wrap {
@@ -1781,8 +1779,6 @@ form input[type="submit"]:hover {
   width: 240px;
   transition: .4s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  object-fit: cover;
-  object-position: center 10%;
 }
 
 .enhacement__img:hover {
