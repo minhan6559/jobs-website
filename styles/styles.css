@@ -772,18 +772,6 @@ th {
     color: var(--primary-color);
   }
 
-  .logo__res {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .header__ham-res svg {
-    width: 2.8rem;
-    height: 2.8rem;
-    color: var(--primary-color);
-  }
-
   .header__drawer {
     position: fixed;
     inset: 0 0% 0 0;
