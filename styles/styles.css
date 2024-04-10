@@ -508,7 +508,7 @@ th {
 }
 
 .about__content>.about__team:nth-of-type(3) {
-  background: url(../images/brodie_hughes.jpg) no-repeat 50% / cover;
+  background: url(../images/brodie_hughes.JPG) no-repeat 50% / cover;
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
