@@ -329,6 +329,7 @@ th {
   font-size: 2.0rem;
   font-weight: 300;
   margin-bottom: 1.2rem;
+  text-align: center;
 }
 
 .spotlight__desc {
@@ -413,6 +414,10 @@ th {
 }
 
 /* About */
+#about__mobile {
+  display: none;
+}
+
 .about {
   margin: 3.6rem;
   padding: 6.0rem 0;
@@ -968,6 +973,11 @@ th {
     row-gap: 2.4rem;
   }
 
+  .spotlight__list:hover>.spotlight__item:not(:hover) {
+    filter: none;
+    opacity: 1;
+  }
+
   /* Workplace */
   .workplace__inner {
     row-gap: 2.4rem;
@@ -1007,6 +1017,14 @@ th {
 
 
   /* About */
+  #about__mobile {
+    display: block;
+  }
+
+  #about__pc {
+    display: none;
+  }
+
   .about {
     margin: 0;
   }
@@ -1025,10 +1043,11 @@ th {
   }
 
   .about__content {
-    height: 56.0rem;
+    /* height: 56.0rem;
     margin-top: 14.0rem;
     flex-direction: column;
-    row-gap: 5.6rem;
+    row-gap: 5.6rem; */
+    display: none;
   }
 
   .about__name {
@@ -1228,6 +1247,7 @@ th {
   transition: filter 0.1s ease;
   filter: blur(1.7px);
   object-fit: cover;
+  object-position: center 20%;
 }
 
 .team__member-info {
@@ -1443,6 +1463,7 @@ th {
     width: 50%;
     margin: 0 auto;
     padding: 2.4rem 0;
+    align-items: center;
   }
 
   .about-hero__text-info {
@@ -1485,7 +1506,6 @@ th {
     padding-left: 5%;
   }
 
-
   /* Join Team Banner */
   .join-team__banner {
     flex-direction: column;
@@ -1498,119 +1518,6 @@ th {
     margin-bottom: 0.8rem;
   }
 }
-
-
-<<<<<<< HEAD
-/* Dash */
-.apply-team__banner {
-  display: inline-block;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  max-width: 40rem;
-  margin: 0 auto;
-  margin-top: 4rem;
-  margin-bottom: 7.5rem;
-  transition: 0.4s;
-  float: center;
-}
-
-.apply-team__banner h2 {
-  font: 800 3.5rem/1.4 "Sora", sans-serif;
-  margin: 0;
-}
-
-.banner__press-container {
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-
-.banner__press {
-    align-items: center;
-    padding: 1rem 1.2rem;
-    border: 0.1rem solid #0166ff;
-    border-radius: 1.2rem;
-    margin-top: 1.3rem;
-    background-color: hsl(230deg, 50%, 45%);
-    color: white;
-    text-decoration: none;
-    transition: all 0.15s ease-out;
-    margin-left: 1.5rem;
-}
-
-.banner__press:hover {
-  background-color: transparent;
-  color: blue;
-  border-radius: 1.6rem;
-}
-
-.banner_press {
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-nav p {
-	display: inline-block;
-	margin-right: 20px;
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.banner_press {
-	height: 200px;
-	position: relative;
-	border: 3px solid blue;
-}
-
-.vertical-center {
-	margin: 0;
-	position: absolute;
-	transform: translateX(590%);
-}
-
-.baner_text {
-	margin: 0;
-	position: absolute;
-	transform: translateX(210%) translateY(-100%);
-	color: blue;
-}
-
-.cybersecurity-specialist {
-	float: right;
-	width: 30.0rem;
-	height: 20.0rem;
-	border-radius: 8px;
-}
-
-.data-engineer {
-	float: right;
-	width: 30.0rem;
-	height: 20.0rem;
-	border-radius: 8px;
-}
-
-.software-engineer {
-	float: right;
-	width: 30.0rem;
-	height: 20.0rem;
-	border-radius: 8px;
-}
-
-.support-specialist {
-	float: right;
-	width: 30.0rem;
-	height: 20.0rem;
-	border-radius: 8px;
-}
-
-
-
-=======
-
-
 
 /* Apply.html */
 /* Container */
@@ -1975,4 +1882,3 @@ form input[type="submit"]:hover {
     display: block;
   }
 }
->>>>>>> cdaa4da3860592c40b1975bd47c037dce1487c52
