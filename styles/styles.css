@@ -1262,8 +1262,7 @@ th {
 
 .team__member-content {
   padding: 0.6rem;
-  margin: 0;
-  text-align: justify;
+  text-align: left;
   line-height: 1.6;
   font-size: 1.48rem;
   font-weight: 400;
