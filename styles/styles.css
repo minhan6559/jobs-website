@@ -1770,6 +1770,7 @@ form input[type="submit"]:hover {
   width: 240px;
   transition: .4s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  object-position: center 28%;
 }
 
 .enhacement__img:hover {
