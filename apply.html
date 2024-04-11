@@ -82,8 +82,23 @@
   <header class="header__mobile">
     <input type="checkbox" name="header__checkbox" id="header__checkbox" class="header__checkbox" hidden>
 
+    <!-- Overlay -->
+    <label for="header__checkbox" class="header__overlay">a</label>
+
     <!-- Menu content -->
     <div class="header__drawer">
+      <!-- Logo -->
+      <div class="logo__wrap">
+        <a href="./index.html" class="logo__img">
+          <img src="./images/logo_no_bg.png" alt="Logo">
+        </a>
+
+        <span class="logo__text">
+          <span class="logo__text-brand">Tech</span>
+          <span class="logo__text-brand logo__text-brand--small">Pulse</span>
+        </span>
+      </div>
+
       <!-- Navbar -->
       <nav class="navbar">
         <ul class="navbar__res">
@@ -119,56 +134,54 @@
             <h1>Job Application</h1>
           </div>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="jobRef">*Job Reference Number:</label>
             <input type="text" id="jobRef" name="job_reference_number" pattern="[A-Za-z0-9]{5}"
               title="Exactly 5 alphanumeric characters" placeholder="e.g ABC12" required>
             <span class="error-message" id="jobRef-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="firstName">*First Name:</label>
             <input type="text" id="firstName" name="first_name" pattern="[A-Za-z]{1,20}" title="Max 20 alpha characters"
               required>
             <span class="error-message" id="firstName-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="lastName">*Last Name:</label>
             <input type="text" id="lastName" name="last_name" pattern="[A-Za-z]{1,20}" title="Max 20 alpha characters"
               required>
             <span class="error-message" id="lastName-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="dob">*Date of Birth:</label>
             <input type="text" id="dob" name="date_of_birth" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/\d{4}"
               title="Date format dd/mm/yyyy, e.g., 31/12/1999" placeholder="dd/mm/yyyy" required>
             <span class="error-message" id="dob-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
-            <fieldset>
-              <legend>*Gender:</legend>
-              <label><input type="radio" name="gender" value="male" required> Male</label>
-              <label><input type="radio" name="gender" value="female" required> Female</label>
-              <label><input type="radio" name="gender" value="other" required> Other</label>
-            </fieldset>
-          </div>
+          <fieldset class="form-input-container-visible">
+            <legend>*Gender:</legend>
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female" required> Female</label>
+            <label><input type="radio" name="gender" value="other" required> Other</label>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="address">*Street Address:</label>
             <input type="text" id="address" name="street_address" maxlength="40" required>
             <span class="error-message" id="address-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="suburb">*Suburb/Town:</label>
             <input type="text" id="suburb" name="suburb_town" maxlength="40" required>
             <span class="error-message" id="suburb-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="state">*State:</label>
             <select id="state" name="state" required>
               <option value="">Select a state</option>
@@ -182,33 +195,32 @@
               <option value="NT">NT</option>
             </select>
             <span class="error-message" id="state-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="postcode">*Postcode:</label>
             <input type="text" id="postcode" name="postcode" pattern="\d{4}" title="Exactly 4 digits"
               placeholder="e.g 6330" required>
             <span class="error-message" id="postcode-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="email">*Email Address:</label>
             <input type="email" id="email" name="email_address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               placeholder="e.g John@Smith.com" required>
             <span class="error-message" id="email-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="phone">*Phone Number:</label>
             <input type="tel" id="phone" name="phone_number" pattern="\d{8,12}|\d{8,12}( |\d)*"
               title="8 to 12 digits, or spaces" placeholder="e.g 0411222333" required>
             <span class="error-message" id="phone-error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container-visible">
+            <legend>*Please select your skills:</legend>
             <div class="skills__field">
-              <fieldset>
-                <legend>*Please select your skills:</legend>
 
                 <input type="checkbox" id="project_management" name="skills" value="project_management"
                   class="skill__input">
@@ -249,15 +261,13 @@
 
                 <input type="checkbox" id="other" name="skills" value="other" class="skill__input">
                 <label for="other" class="skill__label">Other skills...</label>
-
-              </fieldset>
             </div>
-          </div>
+          </fieldset>
 
-          <div class="form-input-container">
+          <fieldset class="form-input-container">
             <label for="otherSkills">Other Skills:</label>
             <textarea id="otherSkills" name="other_skills"></textarea>
-          </div>
+          </fieldset>
 
           <div class="submit__btn-container">
             <input type="submit" value="Apply" class="submit__btn">

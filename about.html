@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About</title>
+  <title>Apply</title>
 
   <!-- Embed fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
   <!-- PC header -->
   <header class="header">
     <div class="container">
@@ -81,8 +82,23 @@
   <header class="header__mobile">
     <input type="checkbox" name="header__checkbox" id="header__checkbox" class="header__checkbox" hidden>
 
+    <!-- Overlay -->
+    <label for="header__checkbox" class="header__overlay">a</label>
+
     <!-- Menu content -->
     <div class="header__drawer">
+      <!-- Logo -->
+      <div class="logo__wrap">
+        <a href="./index.html" class="logo__img">
+          <img src="./images/logo_no_bg.png" alt="Logo">
+        </a>
+
+        <span class="logo__text">
+          <span class="logo__text-brand">Tech</span>
+          <span class="logo__text-brand logo__text-brand--small">Pulse</span>
+        </span>
+      </div>
+
       <!-- Navbar -->
       <nav class="navbar">
         <ul class="navbar__res">

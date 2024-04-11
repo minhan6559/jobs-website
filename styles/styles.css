@@ -1571,8 +1571,14 @@ form textarea {
   resize: none;
 }
 
-.form-input-container {
+.form-input-container-visible {
   padding: 1.1rem;
+  border-radius: 1.2rem;
+}
+
+.form-input-container {
+  border: none;
+  padding: 0.4rem;
 }
 
 form input[type="text"]:focus,
