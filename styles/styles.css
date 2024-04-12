@@ -1652,9 +1652,10 @@ form legend {
   border: .1rem solid #0166ff;
 }
 
-.skill__input:focus + .skill__label {
+.skill__input:focus+.skill__label {
   outline: 0.75px solid #0166ff;
 }
+
 /* Button Style */
 .submit__btn-container {
   text-align: center;
@@ -1761,14 +1762,15 @@ form input[type="submit"]:hover {
 .enhacement__heading {
   font-size: 3.2rem;
   font-weight: 800;
-  color: black;
+  color: var(--primary-color);
 }
 
 .enhacement__desc {
   font-size: 1.6rem;
   font-weight: 400;
   color: black;
-  text-align: center;
+  list-style-type: circle;
+  text-align: left;
 }
 
 .enhacement__wrap {
