@@ -1034,10 +1034,6 @@ th {
   }
 
   .about__content {
-    /* height: 56.0rem;
-    margin-top: 14.0rem;
-    flex-direction: column;
-    row-gap: 5.6rem; */
     display: none;
   }
 
@@ -1589,13 +1585,6 @@ form textarea:focus {
   outline: none;
 }
 
-
-/* Radio Buttons and Checkboxes Style */
-form input[type="radio"],
-form input[type="checkbox"] {
-  margin-right: 0.5rem;
-}
-
 /* Form Fieldset and Legend Style */
 form fieldset {
   border: 1px solid #ddd;
@@ -1616,7 +1605,15 @@ form legend {
 }
 
 .skill__input {
-  display: none;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
 }
 
 .skill__label {
@@ -1644,6 +1641,20 @@ form legend {
   border-radius: 2rem;
 }
 
+.skill__field .skill__label {
+  padding: 1rem 1.2rem;
+  margin: 4px;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, border-radius 0.15s ease-out;
+  user-select: none;
+  background-color: white;
+  border: .1rem solid #0166ff;
+}
+
+.skill__input:focus + .skill__label {
+  outline: 0.75px solid #0166ff;
+}
 /* Button Style */
 .submit__btn-container {
   text-align: center;
