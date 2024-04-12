@@ -1935,7 +1935,9 @@ form input[type="submit"]:hover {
   margin-left: 3rem;
 }
 
-.jobs__content>section>p {
+.jobs__content>section>p,
+ul,
+ol {
   width: 60%;
 }
 
