@@ -42,6 +42,9 @@
               <a href="./apply.php">Apply</a>
             </li>
             <li class="navbar__item">
+              <a href="./manage.php">Manage</a>
+            </li>
+            <li class="navbar__item">
               <a href="./enhancements.php">Enhancements</a>
             </li>
           </ul>
@@ -75,6 +78,9 @@
           </li>
           <li class="navbar__item">
             <a href="./apply.php">Apply</a>
+          </li>
+          <li class="navbar__item">
+            <a href="./manage.php">Manage</a>
           </li>
           <li class="navbar__item">
             <a href="./enhancements.php">Enhancements</a>

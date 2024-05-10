@@ -1520,8 +1520,15 @@ th {
   margin-bottom: 3rem;
 }
 
-.job__title h1 {
+.job__title {
   text-align: center;
+}
+
+.job__title p {
+  margin-bottom: 1.8rem;
+}
+
+.job__title h1 {
   margin-bottom: 1.8rem;
   font: 800 5rem/1.4 "Sora", sans-serif;
   margin-top: 0.5%;
@@ -1665,7 +1672,7 @@ form input[type="submit"] {
   color: white;
   border: .1rem solid #0166ff;
   padding: 1rem 1.2rem;
-  margin: 4px;
+  margin: 15px;
   border-radius: 1.2rem;
   cursor: pointer;
   transition: border-radius 0.15s 0.15s ease-out, background 0.2s;
