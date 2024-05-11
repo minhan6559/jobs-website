@@ -45,7 +45,7 @@
               <a href="./manage.php">Manage</a>
             </li>
             <li class="navbar__item">
-              <a href="./enhancements.php">Enhancements</a>
+              <a href="./phpenhancements.php">Enhancements</a>
             </li>
           </ul>
         </nav>
@@ -83,7 +83,7 @@
             <a href="./manage.php">Manage</a>
           </li>
           <li class="navbar__item">
-            <a href="./enhancements.php">Enhancements</a>
+            <a href="./phpenhancements.php">Enhancements</a>
           </li>
           <li class="navbar__item navbar__hidden">
             <a href="mailto:group.1.swinburne.2024@gmail.com" target="blank">Contact Us</a>

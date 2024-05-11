@@ -27,77 +27,55 @@
             <div class="container">
                 <!-- First enhacement -->
                 <section class="first-enhacement">
-                    <h2 class="enhacement__heading">Responsive</h2>
+                    <h2 class="enhacement__heading">Sorting</h2>
                     <ul class="enhacement__desc">
-                        <li>
-                            Responsive layout for 3 different screen sizes: desktop, tablet, and mobile.
-                        </li>
-                        <li>
-                            The layout will adjust to the
-                            screen size and provide better user experience.
-                        </li>
-                        <li>
-                            Implemented using <strong>CSS Grid</strong>, <strong>Flex Box</strong> and <strong>Media Query</strong>.
-                        </li>
-                        <li>
-                            Reference of responsive nav bar: <a href="https://youtu.be/HYy4c6lcOlM?si=KFMyqYGA1WaIQuF5">F8 Offical</a>
-                        </li>
+                        <li>Provide the manager with the ability to select the field on which to sort the records.</li>
+                        <li>Manager can also choose the sort order.</li>
+                        <li>Implemented using <strong>"ORDER BY"</strong> and <strong>"ASC", "DESC"</strong> for the sort order</li>
                     </ul>
-                    <div class="enhacement__wrap">
-                        <img src="./images/enhancement01.jpg" alt="desktop" class="enhacement__img">
-                        <img src="./images/enhancement02.jpg" alt="tablet" class="enhacement__img">
-                        <img src="./images/enhancement03.jpg" alt="mobile" class="enhacement__img">
+                    <div class="php_enhacement__wrap">
+                        <img src="./images/php_enhancement_1.png" alt="Sort enhacement" class="php_enhancement__img">
                     </div>
+                    <a href="./manage.php#fname_search" class="btn">
+                        <span class="ennhancement__action">See more</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="enhancement__icon">
+                            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                            </path>
+                        </svg>
+                    </a>
                 </section>
 
                 <!-- Second enhacement -->
                 <section class="second-enhacement">
-                    <h2 class="enhacement__heading">Animation</h2>
+                    <h2 class="enhacement__heading">Manage the job descriptions</h2>
                     <ul class="enhacement__desc">
                         <li>
-                            Smooth transition between elements.
+                            Store job descriptions in a database table named "job".
                         </li>
                         <li>
-                            The animations improves user experience and the overall look of the website.
+                            Provide the manager with the ability to add and delete job descriptions.
                         </li>
                         <li>
-                            Implemented using <strong>CSS Transition</strong> and <strong>Transform</strong>.
-                        </li>
-                        <li>
-                            Referenced from <a href="https://tnqan.github.io/Literary-Dreams/" target="blank">Literary Dreams</a> and
-                            <a href="https://codepen.io/kristen17/pen/wvPebxy">Kristen17</a>.
+                            The HTML codes that related to job descriptions will be dynamically created by PHP.
+                            (like in <a href="./jobs.php">Job Page</a>)
                         </li>
                     </ul>
 
-                    <div class="enhancement__direct">
-                        <div class="enhacement__list">
-                            <img src="./images/spotlight_01.jpg" alt="A meeting" class="enhacement__item">
-                            <img src="./images/spotlight_02.jpg" alt="Working at home" class="enhacement__item">
-                            <img src="./images/spotlight_03.jpg" alt="Another meeting" class="enhacement__item">
-                        </div>
-                        <a href="./index.php#spotlight" class="btn">
-                            <span class="ennhancement__action">See more</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="enhancement__icon">
-                                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
-                                </path>
-                            </svg>
-                        </a>
+                    <div class="php_enhacement__wrap">
+                        <img src="./images/php_enhancement_2.png" alt="Add job form" class="php_enhancement__img">
                     </div>
 
-                    <div class="enhancement__direct">
-                        <div class="enhacement__wrap">
-                            <img src="./images/workplace_01.jpg" alt="People share their idea" class="enhacement__img">
-                            <img src="./images/workplace_02.jpg" alt="Quiet workplace" class="enhacement__img">
-                            <img src="./images/workplace_03.jpg" alt="People at break time" class="enhacement__img">
-                        </div>
-                        <a href="./index.php#workplace" class="btn">
-                            <span class="ennhancement__action">See more</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="enhancement__icon">
-                                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
-                                </path>
-                            </svg>
-                        </a>
+                    <div class="php_enhacement__wrap">
+                        <img src="./images/php_enhancement_3.png" alt="Delete job form" class="php_enhancement__img">
                     </div>
+
+                    <a href="./manage.php#JobRefNum" class="btn">
+                        <span class="ennhancement__action">See more</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="enhancement__icon">
+                            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                            </path>
+                        </svg>
+                    </a>
                 </section>
             </div>
         </section>
