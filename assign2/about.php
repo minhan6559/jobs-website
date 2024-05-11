@@ -152,7 +152,7 @@
       </div>
       <!-- Join Team Button -->
       <div class="banner__button-container">
-        <a href="./jobs.html" class="banner__button">View Jobs</a>
+        <a href="./jobs.php" class="banner__button">View Jobs</a>
       </div>
     </div>
   </main>

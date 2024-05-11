@@ -75,7 +75,7 @@
               <img src="./images/spotlight_02.jpg" alt="Working at home" class="enhacement__item">
               <img src="./images/spotlight_03.jpg" alt="Another meeting" class="enhacement__item">
             </div>
-            <a href="./index.html#spotlight" class="btn">
+            <a href="./index.php#spotlight" class="btn">
               <span class="ennhancement__action">See more</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="enhancement__icon">
                 <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
@@ -90,7 +90,7 @@
               <img src="./images/workplace_02.jpg" alt="Quiet workplace" class="enhacement__img">
               <img src="./images/workplace_03.jpg" alt="People at break time" class="enhacement__img">
             </div>
-            <a href="./index.html#workplace" class="btn">
+            <a href="./index.php#workplace" class="btn">
               <span class="ennhancement__action">See more</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="enhancement__icon">
                 <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">

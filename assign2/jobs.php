@@ -212,7 +212,7 @@
         <h2>Like What You See?</h2>
       </div>
       <div class="banner__press-container">
-        <a href="./apply.html" class="banner__press"><strong>Apply Now!</strong></a>
+        <a href="./apply.php" class="banner__press"><strong>Apply Now!</strong></a>
       </div>
     </div>
     <br />

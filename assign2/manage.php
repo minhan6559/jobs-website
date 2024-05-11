@@ -26,47 +26,73 @@
         <div class="form__container">
             <!-- Form -->
             <div class="form">
-                <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+                <form action="./process_manage.php" method="post">
                     <div class="job__title">
                         <h1>
-                            Search EOI
+                            Search EOIs
                         </h1>
-                        <p>(leave all values empty to list all EOIs)</p>
+                        <p>To list all items, leave first 3 values as default</p>
                     </div>
 
                     <fieldset class="form-input-container">
-                        <label for="firstName">*First Name:</label>
-                        <input type="text" id="firstName" name="first_name" pattern="[A-Za-z]{1,20}" title="Max 20 alpha characters">
+                        <label for="fname_search">*First Name:</label>
+                        <input type="text" id="fname_search" name="fname_search" pattern="[A-Za-z]{1,20}" title="Max 20 alpha characters">
                         <span class="error-message" id="firstName-error"></span>
                     </fieldset>
 
                     <fieldset class="form-input-container">
-                        <label for="lastName">*Last Name:</label>
-                        <input type="text" id="lastName" name="last_name" pattern="[A-Za-z]{1,20}" title="Max 20 alpha characters">
+                        <label for="lname_search">*Last Name:</label>
+                        <input type="text" id="lname_search" name="lname_search" pattern="[A-Za-z]{1,20}" title="Max 20 alpha characters">
                         <span class="error-message" id="lastName-error"></span>
                     </fieldset>
 
                     <fieldset class="form-input-container-visible">
                         <legend>*Job Position:</legend>
                         <div class="skills__field">
-                            <input type="radio" id="CSS01" name="job" value="CSS01" tabindex="0" class="skill__input">
-                            <label for="CSS01" class="skill__label">CSS01</label>
+                            <input type="radio" id="all_jobs_search" name="job_search" value="all" class="skill__input" checked>
+                            <label for="all_jobs_search" class="skill__label">All</label>
 
-                            <input type="radio" id="DE002" name="job" value="DE002" class="skill__input">
-                            <label for="DE002" class="skill__label">DE002</label>
+                            <input type="radio" id="CSS01_search" name="job_search" value="CSS01" class="skill__input">
+                            <label for="CSS01_search" class="skill__label">CSS01</label>
 
-                            <input type="radio" id="SE003" name="job" value="SE003" class="skill__input">
-                            <label for="SE003" class="skill__label">SE003</label>
+                            <input type="radio" id="DE002_search" name="job_search" value="DE002" class="skill__input">
+                            <label for="DE002_search" class="skill__label">DE002</label>
 
-                            <input type="radio" id="ITSS4" name="job" value="ITSS4" class="skill__input">
-                            <label for="ITSS4" class="skill__label">ITSS4</label>
+                            <input type="radio" id="SE003_search" name="job_search" value="SE003" class="skill__input">
+                            <label for="SE003_search" class="skill__label">SE003</label>
+
+                            <input type="radio" id="ITSS4_search" name="job_search" value="ITSS4" class="skill__input">
+                            <label for="ITSS4_search" class="skill__label">ITSS4</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-input-container-visible">
+                        <legend>*Choose a criteria to sort:</legend>
+                        <div class="skills__field">
+                            <input type="radio" id="EOInumber" name="crit" value="EOInumber" class="skill__input" checked>
+                            <label for="EOInumber" class="skill__label">EOI number</label>
+
+                            <input type="radio" id="fname_crit" name="crit" value="FirstName" class="skill__input">
+                            <label for="fname_crit" class="skill__label">First name</label>
+
+                            <input type="radio" id="lname_crit" name="crit" value="LastName" class="skill__input">
+                            <label for="lname_crit" class="skill__label">Last name</label>
+
+                            <input type="radio" id="gender_crit" name="crit" value="Gender" class="skill__input">
+                            <label for="gender_crit" class="skill__label">Gender</label>
+
+                            <input type="radio" id="state_crit" name="crit" value="State" class="skill__input">
+                            <label for="state_crit" class="skill__label">State</label>
+
+                            <input type="radio" id="postcode_crit" name="crit" value="Postcode" class="skill__input">
+                            <label for="postcode_crit" class="skill__label">Postcode</label>
                         </div>
                     </fieldset>
 
                     <fieldset class="form-input-container-visible">
                         <legend>*Sort order:</legend>
                         <div class="skills__field">
-                            <input type="radio" id="asc" name="sort" value="asc" tabindex="0" class="skill__input" checked>
+                            <input type="radio" id="asc" name="sort" value="asc" class="skill__input" checked>
                             <label for="asc" class="skill__label">Ascending</label>
 
                             <input type="radio" id="desc" name="sort" value="desc" class="skill__input">
@@ -74,31 +100,82 @@
                         </div>
                     </fieldset>
 
+
+                    <div class="submit__btn-container">
+                        <input type="submit" name="Search" value="Search" class="submit__btn">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+        <div class="form__container">
+            <!-- Form -->
+            <div class="form">
+                <form action="./process_manage.php" method="post">
+                    <div class="job__title">
+                        <h1>
+                            Delete EOIs
+                        </h1>
+                    </div>
+
                     <fieldset class="form-input-container-visible">
-                        <legend>*Choose a criteria to sort:</legend>
+                        <legend>*Job Position:</legend>
                         <div class="skills__field">
-                            <input type="radio" id="none" name="crit" value="none" tabindex="0" class="skill__input" checked>
-                            <label for="none" class="skill__label">No Sort</label>
+                            <input type="radio" id="CSS01_del" name="job_del" value="CSS01" class="skill__input" checked>
+                            <label for="CSS01_del" class="skill__label">CSS01</label>
 
-                            <input type="radio" id="fname" name="crit" value="fname" class="skill__input">
-                            <label for="fname" class="skill__label">First name</label>
+                            <input type="radio" id="DE002_del" name="job_del" value="DE002" class="skill__input">
+                            <label for="DE002_del" class="skill__label">DE002</label>
 
-                            <input type="radio" id="lname" name="crit" value="lname" class="skill__input">
-                            <label for="lname" class="skill__label">Last name</label>
+                            <input type="radio" id="SE003_del" name="job_del" value="SE003" class="skill__input">
+                            <label for="SE003_del" class="skill__label">SE003</label>
 
-                            <input type="radio" id="gender" name="crit" value="gender" class="skill__input">
-                            <label for="gender" class="skill__label">Gender</label>
-
-                            <input type="radio" id="state" name="crit" value="state" class="skill__input">
-                            <label for="state" class="skill__label">State</label>
-
-                            <input type="radio" id="postcode" name="crit" value="postcode" class="skill__input">
-                            <label for="postcode" class="skill__label">Postcode</label>
+                            <input type="radio" id="ITSS4_del" name="job_del" value="ITSS4" class="skill__input">
+                            <label for="ITSS4_del" class="skill__label">ITSS4</label>
                         </div>
                     </fieldset>
 
                     <div class="submit__btn-container">
-                        <input type="submit" value="Search" class="submit__btn">
+                        <input type="submit" name="Delete" value="Delete" class="submit__btn">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="form__container">
+            <!-- Form -->
+            <div class="form">
+                <form action="./process_manage.php" method="post">
+                    <div class="job__title">
+                        <h1>
+                            Change Status
+                        </h1>
+                    </div>
+
+                    <fieldset class="form-input-container">
+                        <label for="eoi_change">*Enter the EOI number:</label>
+                        <input type="text" id="eoi_change" name="eoi_change" required>
+                    </fieldset>
+
+                    <fieldset class="form-input-container-visible">
+                        <legend>*Choose a status:</legend>
+                        <div class="skills__field">
+                            <input type="radio" id="new" name="status_change" value="New" class="skill__input" checked>
+                            <label for="new" class="skill__label">New</label>
+
+                            <input type="radio" id="current" name="status_change" value="Current" class="skill__input">
+                            <label for="current" class="skill__label">Current</label>
+
+                            <input type="radio" id="final" name="status_change" value="Final" class="skill__input">
+                            <label for="final" class="skill__label">Final</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="submit__btn-container">
+                        <input type="submit" name="Change" value="Change" class="submit__btn">
                     </div>
                 </form>
 

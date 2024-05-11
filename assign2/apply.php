@@ -125,30 +125,6 @@
               <input type="checkbox" id="data_analysis" name="skills[]" value="data_analysis" class="skill__input" tabindex="0">
               <label for="data_analysis" class="skill__label">Data Analysis</label>
 
-              <input type="checkbox" id="cloud_computing" name="skills[]" value="cloud_computing" class="skill__input" tabindex="0">
-              <label for="cloud_computing" class="skill__label">Cloud Computing</label>
-
-              <input type="checkbox" id="digital_marketing" name="skills[]" value="digital_marketing" class="skill__input" tabindex="0">
-              <label for="digital_marketing" class="skill__label">Digital Marketing</label>
-
-              <input type="checkbox" id="software_development" name="skills[]" value="software_development" class="skill__input" tabindex="0">
-              <label for="software_development" class="skill__label">Software Development</label>
-
-              <input type="checkbox" id="web_development" name="skills[]" value="web_development" class="skill__input" tabindex="0">
-              <label for="web_development" class="skill__label">Web Development</label>
-
-              <input type="checkbox" id="it_service_management" name="skills[]" value="it_service_management" class="skill__input" tabindex="0">
-              <label for="it_service_management" class="skill__label">IT Service Management</label>
-
-              <input type="checkbox" id="network_administration" name="skills[]" value="network_administration" class="skill__input" tabindex="0">
-              <label for="network_administration" class="skill__label">Network Administration</label>
-
-              <input type="checkbox" id="user_experience_design" name="skills[]" value="user_experience_design" class="skill__input" tabindex="0">
-              <label for="user_experience_design" class="skill__label">User Experience Design</label>
-
-              <input type="checkbox" id="business_intelligence" name="skills[]" value="business_intelligence" class="skill__input" tabindex="0">
-              <label for="business_intelligence" class="skill__label">Business Intelligence</label>
-
               <input type="checkbox" id="other_skills" name="skills[]" value="other" class="skill__input" tabindex="0">
               <label for="other_skills" class="skill__label">Other skills...</label>
             </div>
