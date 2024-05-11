@@ -20,13 +20,28 @@
 
 <body>
     <!-- Header -->
-    <?php include 'header.inc'; ?>
+    <?php
+    if (!isset($_POST['Search']) && !isset($_POST['Delete_EOI']) && !isset($_POST['Change']) && !isset($_POST['Add']) && !isset($_POST['Delete_Job'])) {
+        header("location: ./manage.php");
+    }
+    include 'header.inc';
+    ?>
 
     <main>
         <div class="result__container">
             <h1>Result</h1>
             <?php
+            function sanitize_input($conn, $data)
+            {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                $data = mysqli_real_escape_string($conn, $data);
+                return $data;
+            }
+
             require_once 'settings.php';
+
 
             $back_btn = "<div class=\"banner__press-container\">
             <a href=\"./manage.php\" class=\"banner__press\"><strong>Back to Manage Page</strong></a>
@@ -54,13 +69,13 @@
             //     Status ENUM('New', 'Current', 'Final') DEFAULT 'New' 
             //   );
 
-            $sql_table = "eoi";
+            $eoi_table = "eoi";
             if (isset($_POST['Search'])) {
-                $query = "SELECT * FROM $sql_table";
+                $query = "SELECT * FROM $eoi_table";
 
 
-                $fname_search = $_POST['fname_search'];
-                $lname_search = $_POST['lname_search'];
+                $fname_search = sanitize_input($conn, $_POST['fname_search']);
+                $lname_search = sanitize_input($conn, $_POST['lname_search']);
                 $job_search = $_POST['job_search'];
 
                 if ($fname_search != "" || $lname_search != "" || $job_search != "all") {
@@ -138,24 +153,105 @@
                 mysqli_free_result($result);
             }
 
-            if (isset($_POST['Delete'])) {
-                $job_del = $_POST['job_del'];
-                $query = "DELETE FROM $sql_table WHERE JobRefNum = '$job_del'";
-                $result = @mysqli_query($conn, $query) or die("<p>Failed to delete record</p> $back_btn");
-                echo "<p>Delete records successfully</p>";
+            if (isset($_POST['Delete_EOI'])) {
+                // Check if there is any jobs
+                $query = "SELECT * FROM job";
+                $result = @mysqli_query($conn, $query) or die("<p>Failed to check if there is any jobs</p> $back_btn");
+
+                if (mysqli_num_rows($result) == 0) {
+                    echo ("<p>There is no job to delete</p>");
+                    mysqli_free_result($result);
+                } else {
+                    mysqli_free_result($result);
+                    $job_del_eoi = $_POST['job_del_eoi'];
+                    $query = "DELETE FROM $eoi_table WHERE JobRefNum = '$job_del_eoi'";
+                    $result = @mysqli_query($conn, $query) or die("<p>Failed to delete record</p> $back_btn");
+                    echo "<p>Delete records successfully</p>";
+                }
             }
 
             if (isset($_POST['Change'])) {
-                $eoi_num = $_POST['eoi_change'];
+                $eoi_num = sanitize_input($conn, $_POST['eoi_change']);
                 $status = $_POST['status_change'];
 
-                $query = "UPDATE $sql_table SET Status = '$status' WHERE EOInumber = $eoi_num";
+                $query = "UPDATE $eoi_table SET Status = '$status' WHERE EOInumber = $eoi_num";
                 $result = @mysqli_query($conn, $query) or die("<p>Failed to update record</p> $back_btn");
 
                 if (mysqli_affected_rows($conn) == 0) {
                     echo "<p>EOI number not found</p>";
                 } else {
                     echo "<p>Update record successfully</p>";
+                }
+            }
+
+            if (isset($_POST['Add'])) {
+                $jobRefNum = sanitize_input($conn, $_POST['JobRefNum']);
+                $title = sanitize_input($conn, $_POST['Title']);
+                $briefDesc = sanitize_input($conn, $_POST['BriefDescription']);
+                $salary = sanitize_input($conn, $_POST['SalaryRange']);
+                $reportsTo = sanitize_input($conn, $_POST['ReportsTo']);
+                $keyRes = sanitize_input($conn, $_POST['KeyResponsibilities']);
+                $essReq = sanitize_input($conn, $_POST['EssentialRequirements']);
+                $preReq = sanitize_input($conn, $_POST['PreferableRequirements']);
+
+                $query = "CREATE TABLE IF NOT EXISTS job (
+                    JobRefNum CHAR(5) PRIMARY KEY,
+                    Title VARCHAR(100) NOT NULL,
+                    BriefDescription TEXT NOT NULL,
+                    SalaryRange VARCHAR(100) NOT NULL,
+                    ReportsTo VARCHAR(100) NOT NULL,
+                    KeyResponsibilities TEXT NOT NULL,
+                    EssentialRequirements TEXT NOT NULL,
+                    PreferableRequirements TEXT NOT NULL
+                );";
+
+                $result = @mysqli_query($conn, $query) or die("<p>Failed to create table</p> $back_btn");
+
+                // Check if JobRefNum already exists
+                $query = "SELECT * FROM job WHERE JobRefNum = '$jobRefNum'";
+                $result = @mysqli_query($conn, $query) or die("<p>Failed to check if Job Reference Number exists</p> $back_btn");
+
+                if (mysqli_num_rows($result) != 0) {
+                    echo ("<p>Job Reference Number already exists</p>");
+                    mysqli_free_result($result);
+                } else {
+                    mysqli_free_result($result);
+                    $query = "INSERT INTO job (JobRefNum, Title, BriefDescription, SalaryRange, ReportsTo, KeyResponsibilities, EssentialRequirements, PreferableRequirements) VALUES ('$jobRefNum', '$title', '$briefDesc', '$salary', '$reportsTo', '$keyRes', '$essReq', '$preReq')";
+
+                    $result = @mysqli_query($conn, $query) or die("<p>" . mysqli_error($conn) . "</p> $back_btn");
+
+                    echo "<p>Insert record successfully</p>";
+                }
+            }
+
+            if (isset($_POST['Delete_Job'])) {
+                $query = "SELECT * FROM job";
+                $result = @mysqli_query($conn, $query) or die("<p>Failed to check if there is any jobs</p> $back_btn");
+
+                if (mysqli_num_rows($result) == 0) {
+                    echo ("<p>There is no job to delete</p>");
+                    mysqli_free_result($result);
+                } else {
+                    mysqli_free_result($result);
+                    $job_del = sanitize_input($conn, $_POST['job_del']);
+
+                    $query = "SELECT * FROM $eoi_table WHERE JobRefNum = '$job_del'";
+                    $result = @mysqli_query($conn, $query) or die("<p>Failed to check if there is any EOIs</p> $back_btn");
+
+                    if (mysqli_num_rows($result) != 0) {
+                        echo ("<p>There are EOIs associated with this job</p>");
+                        mysqli_free_result($result);
+                    } else {
+                        mysqli_free_result($result);
+                        $query = "DELETE FROM job WHERE JobRefNum = '$job_del'";
+                        $result = @mysqli_query($conn, $query) or die("<p>Failed to delete record</p> $back_btn");
+
+                        if (mysqli_affected_rows($conn) == 0) {
+                            echo "<p>Job Reference Number not found</p>";
+                        } else {
+                            echo "<p>Delete record successfully</p>";
+                        }
+                    }
                 }
             }
 

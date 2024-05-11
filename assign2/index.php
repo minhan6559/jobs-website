@@ -33,9 +33,9 @@
           </h1>
           <div class="hero__main-desc">
             <strong>TECH PULSE</strong> is a IT service provider that works with businesses to provide end to end IT
-            solutions. <br>
+            solutions. <br> <br>
             Click this <a href="https://youtu.be/JRUysmyHYm4?si=Tna4e8SbrLs_ZjeJ">Link</a> to watch the demonstration
-            video.
+            video for assignment 1. <br> <br>
           </div>
           <div class="hero__search">
             <a href="./jobs.php" class="hero__text">

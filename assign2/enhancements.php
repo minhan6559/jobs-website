@@ -100,7 +100,11 @@
           </div>
         </section>
       </div>
+      <div class="banner__press-container">
+        <a href="./phpenhancements.php" class="banner__press"><strong>Move to Assignment 2 Enhancements</strong></a>
+      </div>
     </section>
+
   </main>
 
   <!-- Footer -->

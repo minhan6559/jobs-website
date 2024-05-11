@@ -1784,7 +1784,7 @@ form input[type="submit"]:hover {
   justify-content: center;
   gap: 2.4rem;
   margin: 2rem 0 0;
-  padding: 0 22rem 10rem;
+  padding: 0 22rem 2rem;
 }
 
 .enhacement__heading {
@@ -1953,6 +1953,10 @@ form input[type="submit"]:hover {
 
 .jobs__content {
   margin-left: 2rem;
+}
+
+.jobs__content>section {
+  margin-bottom: 2rem;
 }
 
 .jobs__content>section>ol {
