@@ -42,6 +42,8 @@
             echo '<li class="menu"><a href="#' . $row['JobRefNum'] . '">' . $row['Title'] . '</a></li>';
           }
         }
+        mysqli_free_result($result);
+        mysqli_close($conn);
         ?>
       </ul>
     </aside>
@@ -105,6 +107,9 @@
           echo '</section>';
           echo '<br />';
         }
+
+        mysqli_free_result($result);
+        mysqli_close($conn);
       }
       ?>
     </div>

@@ -61,6 +61,9 @@
                                 echo "<input type=\"radio\" id=\"" . $row['JobRefNum'] . "_search\" name=\"job_search\" value=\"" . $row['JobRefNum'] . "\" class=\"skill__input\">";
                                 echo "<label for=\"" . $row['JobRefNum'] . "_search\" class=\"skill__label\">" . $row['JobRefNum'] . "</label>";
                             }
+
+                            mysqli_free_result($result);
+                            mysqli_close($conn);
                             ?>
                         </div>
                     </fieldset>
@@ -144,6 +147,8 @@
                                 }
                             }
 
+                            mysqli_free_result($result);
+                            mysqli_close($conn);
                             ?>
                         </div>
                     </fieldset>
@@ -287,6 +292,8 @@
                                 }
                             }
 
+                            mysqli_free_result($result);
+                            mysqli_close($conn);
                             ?>
                         </div>
                     </fieldset>
