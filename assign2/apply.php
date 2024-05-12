@@ -26,7 +26,7 @@
     <div class="form__container">
       <!-- Form -->
       <div class="form">
-        <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+        <form action="processEOI.php" method="post" novalidate="novalidate">
           <div class="job__title">
             <h1>Job Application</h1>
           </div>
@@ -71,13 +71,13 @@
 
           <fieldset class="form-input-container">
             <label for="address">*Street Address:</label>
-            <input type="text" id="address" name="street_address" maxlength="40" required>
+            <input type="text" id="address" name="street_address" required>
             <span class="error-message" id="address-error"></span>
           </fieldset>
 
           <fieldset class="form-input-container">
             <label for="suburb">*Suburb/Town:</label>
-            <input type="text" id="suburb" name="suburb_town" maxlength="40" required>
+            <input type="text" id="suburb" name="suburb_town" required>
             <span class="error-message" id="suburb-error"></span>
           </fieldset>
 
