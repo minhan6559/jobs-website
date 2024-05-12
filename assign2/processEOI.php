@@ -5,6 +5,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Process EOI</title>
+<style>
+        .message {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+</style>
 </head>
 
 <body>
@@ -134,13 +153,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Displays any validation errors
+  
   if (!empty($errors)) {
-      echo "<h2>Validation Errors:</h2>";
-      foreach ($errors as $error) {
-          echo "<p>$error</p>";
-      }
+    echo '<div class="message error">';
+    echo '<h2>Validation Errors:</h2>';
+    foreach ($errors as $error) {
+        echo "<p>$error</p>";
+    }
+    echo '</div>';
   } else {
-
       $skills = '';
       if (!empty($_POST['skills'])) {
           $skills = implode(',', $_POST['skills']);
@@ -152,9 +173,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       if ($conn->query($sql) === TRUE) {
           $eoinumber = $conn->insert_id;
+          echo '<div class="message success">';
           echo "New record created successfully. Your EOI number is: " . $eoinumber;
+          echo '</div>';
       } else {
+          echo '<div class="message error">';
           echo "Error: " . $sql . "<br>" . $conn->error;
+          echo '</div>';
       }
   }
 }
