@@ -58,13 +58,13 @@
           <fieldset class="form-input-container-visible">
             <legend>*Gender:</legend>
             <div class="skills__field">
-              <input type="radio" id="male" name="gender" value="male" tabindex="0" class="skill__input" required>
+              <input type="radio" id="male" name="gender" value="Male" tabindex="0" class="skill__input" required checked>
               <label for="male" class="skill__label">Male</label>
 
-              <input type="radio" id="female" name="gender" value="female" class="skill__input" required>
+              <input type="radio" id="female" name="gender" value="Female" class="skill__input" required>
               <label for="female" class="skill__label">Female</label>
 
-              <input type="radio" id="other" name="gender" value="other" class="skill__input" required>
+              <input type="radio" id="other" name="gender" value="Other" class="skill__input" required>
               <label for="other" class="skill__label">Other</label>
             </div>
           </fieldset>
@@ -119,13 +119,13 @@
             <legend>*Please select your skills:</legend>
             <div class="skills__field">
 
-              <input type="checkbox" id="project_management" name="skills[]" value="project_management" class="skill__input" tabindex="0">
+              <input type="checkbox" id="project_management" name="project_management" value="project_management" class="skill__input" tabindex="0">
               <label for="project_management" class="skill__label">Project Management</label>
 
-              <input type="checkbox" id="data_analysis" name="skills[]" value="data_analysis" class="skill__input" tabindex="0">
+              <input type="checkbox" id="data_analysis" name="data_analysis" value="data_analysis" class="skill__input" tabindex="0">
               <label for="data_analysis" class="skill__label">Data Analysis</label>
 
-              <input type="checkbox" id="other_skills" name="skills[]" value="other" class="skill__input" tabindex="0">
+              <input type="checkbox" id="other_skills" name="other" value="other" class="skill__input" tabindex="0">
               <label for="other_skills" class="skill__label">Other skills...</label>
             </div>
           </fieldset>

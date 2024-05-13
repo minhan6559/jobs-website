@@ -2069,3 +2069,23 @@ form input[type="submit"]:hover {
   height: 20.0rem;
   border-radius: 8px;
 }
+
+/* PHP */
+
+.message {
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.error {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}

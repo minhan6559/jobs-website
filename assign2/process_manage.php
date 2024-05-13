@@ -21,8 +21,9 @@
 <body>
     <!-- Header -->
     <?php
-    if (!isset($_POST['Search']) && !isset($_POST['Delete_EOI']) && !isset($_POST['Change']) && !isset($_POST['Add']) && !isset($_POST['Delete_Job'])) {
-        header("location: ./manage.php");
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        header("Location: manage.php");
+        exit();
     }
     include 'header.inc';
     ?>
@@ -50,24 +51,26 @@
             $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p> $back_btn");
 
             // SQL query to create the table:
-            // CREATE TABLE IF NOT EXISTS eoi (
-            //     EOInumber INT AUTO_INCREMENT PRIMARY KEY,
-            //     JobRefNum CHAR(5) NOT NULL,
-            //     FirstName VARCHAR(20) NOT NULL,
-            //     LastName VARCHAR(20) NOT NULL,
-            //     DOB CHAR(10) NOT NULL,
-            //     Gender ENUM('Male', 'Female', 'Other') NOT NULL,
-            //     StreetAddress VARCHAR(40) NOT NULL,
-            //     Town VARCHAR(40) NOT NULL,
-            //     State VARCHAR(4) NOT NULL, 
-            //     Postcode CHAR(4) NOT NULL,
-            //     Email VARCHAR(255) NOT NULL,
-            //     Phone VARCHAR(12) NOT NULL,
-            //     ProjectManagement BOOLEAN DEFAULT FALSE,
-            //     DataAnalysis BOOLEAN DEFAULT FALSE,
-            //     OtherSkills TEXT,
-            //     Status ENUM('New', 'Current', 'Final') DEFAULT 'New' 
-            //   );
+            $query = "CREATE TABLE IF NOT EXISTS eoi (
+                EOInumber INT AUTO_INCREMENT PRIMARY KEY,
+                JobRefNum CHAR(5) NOT NULL,
+                FirstName VARCHAR(20) NOT NULL,
+                LastName VARCHAR(20) NOT NULL,
+                DOB CHAR(10) NOT NULL,
+                Gender ENUM('Male', 'Female', 'Other') NOT NULL,
+                StreetAddress VARCHAR(40) NOT NULL,
+                Town VARCHAR(40) NOT NULL,
+                State VARCHAR(4) NOT NULL, 
+                Postcode CHAR(4) NOT NULL,
+                Email VARCHAR(255) NOT NULL,
+                Phone VARCHAR(12) NOT NULL,
+                ProjectManagement BOOLEAN DEFAULT FALSE,
+                DataAnalysis BOOLEAN DEFAULT FALSE,
+                OtherSkills TEXT,
+                Status ENUM('New', 'Current', 'Final') DEFAULT 'New' 
+              );";
+
+            $result = @mysqli_query($conn, $query) or die("<p>Failed to create EOI table</p> $back_btn");
 
             $eoi_table = "eoi";
             if (isset($_POST['Search'])) {
