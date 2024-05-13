@@ -64,7 +64,7 @@
         <div class="form__container">
             <!-- Form -->
             <div class="form">
-                <form action="./process_manage.php" method="post">
+                <form action="./processManage.php" method="post">
                     <div class="job__title">
                         <h1>
                             Search EOIs
@@ -150,7 +150,7 @@
         <div class="form__container">
             <!-- Form -->
             <div class="form">
-                <form action="./process_manage.php" method="post">
+                <form action="./processManage.php" method="post">
                     <div class="job__title">
                         <h1>
                             Delete EOIs
@@ -196,7 +196,7 @@
         <div class="form__container">
             <!-- Form -->
             <div class="form">
-                <form action="./process_manage.php" method="post">
+                <form action="./processManage.php" method="post">
                     <div class="job__title">
                         <h1>
                             Change Status
@@ -233,7 +233,7 @@
         <div class="form__container">
             <!-- Form -->
             <div class="form">
-                <form action="./process_manage.php" method="post">
+                <form action="./processManage.php" method="post">
                     <div class="job__title">
                         <h1>
                             Add Job Description
@@ -292,7 +292,7 @@
         <div class="form__container">
             <!-- Form -->
             <div class="form">
-                <form action="./process_manage.php" method="post">
+                <form action="./processManage.php" method="post">
                     <div class="job__title">
                         <h1>
                             Delete Job Description

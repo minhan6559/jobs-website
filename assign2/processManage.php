@@ -21,9 +21,9 @@
 <body>
     <!-- Header -->
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        header("Location: manage.php");
-        exit();
+    if (!isset($_SERVER['HTTP_REFERER'])) {
+        header('location:manage.php');
+        exit;
     }
     include 'header.inc';
     ?>

@@ -29,9 +29,9 @@
         return $data;
     }
     //Disables direct connections to processEOI.php
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        header("Location: apply.php");
-        exit();
+    if (!isset($_SERVER['HTTP_REFERER'])) {
+        header('location:apply.php');
+        exit;
     }
     include 'header.inc';
     require_once 'settings.php';
@@ -58,9 +58,7 @@
         $phoneNumber = sanitize_input($conn, $_POST['phone_number']);
         $project_management = isset($_POST['project_management']) ? 1 : 0;
         $data_analysis = isset($_POST['data_analysis']) ? 1 : 0;
-        $otherSkills = '';
-        if (isset($_POST['other']))
-            $otherSkills = sanitize_input($conn, $_POST['other_skills']);
+        $otherSkills = sanitize_input($conn, $_POST['other_skills']);
 
         // Validate form inputs
         $errors = [];
@@ -156,6 +154,11 @@
         // Other skills checked but no text
         if (isset($_POST['other']) && empty($otherSkills)) {
             $errors[] = "Other skills checked but no text provided.";
+        }
+
+        // Other skills has text but not checked
+        if (!isset($_POST['other']) && !empty($otherSkills)) {
+            $errors[] = "Other skills text provided but not checked.";
         }
 
         // Displays any validation errors
