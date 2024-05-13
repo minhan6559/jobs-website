@@ -36,6 +36,11 @@
     include 'header.inc';
     require_once 'settings.php';
 
+    echo '<div class="result__container">';
+    $back_btn = "<div class=\"banner__press-container\">
+            <a href=\"./apply.php\" class=\"banner__press\"><strong>Back to Apply Page</strong></a>
+            </div>";
+
     $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p>");
 
     // Check if the form was submitted
@@ -211,6 +216,8 @@
 
     // Close connection
     mysqli_close($conn);
+    echo $back_btn;
+    echo '</div>';
 
     include 'footer.inc';
     ?>
