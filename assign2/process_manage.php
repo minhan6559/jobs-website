@@ -177,13 +177,18 @@
                 $eoi_num = sanitize_input($conn, $_POST['eoi_change']);
                 $status = $_POST['status_change'];
 
-                $query = "UPDATE $eoi_table SET Status = '$status' WHERE EOInumber = $eoi_num";
-                $result = @mysqli_query($conn, $query) or die("<p>Failed to update record</p> $back_btn");
-
-                if (mysqli_affected_rows($conn) == 0) {
-                    echo "<p>EOI number not found</p>";
+                // Check if eoi_num is valid
+                if (!is_numeric($eoi_num)) {
+                    echo "<p>Invalid EOI number</p>";
                 } else {
-                    echo "<p>Update record successfully</p>";
+                    $query = "UPDATE $eoi_table SET Status = '$status' WHERE EOInumber = $eoi_num";
+                    $result = @mysqli_query($conn, $query) or die("<p>Failed to update record</p> $back_btn");
+
+                    if (mysqli_affected_rows($conn) == 0) {
+                        echo "<p>EOI number not found</p>";
+                    } else {
+                        echo "<p>Update record successfully</p>";
+                    }
                 }
             }
 
@@ -223,7 +228,7 @@
 
                     $result = @mysqli_query($conn, $query) or die("<p>" . mysqli_error($conn) . "</p> $back_btn");
 
-                    echo "<p>Insert record successfully</p>";
+                    echo "<p>Insert job successfully</p>";
                 }
             }
 
@@ -252,7 +257,7 @@
                         if (mysqli_affected_rows($conn) == 0) {
                             echo "<p>Job Reference Number not found</p>";
                         } else {
-                            echo "<p>Delete record successfully</p>";
+                            echo "<p>Delete job successfully</p>";
                         }
                     }
                 }
