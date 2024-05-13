@@ -50,28 +50,6 @@
 
             $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p> $back_btn");
 
-            // SQL query to create the table:
-            $query = "CREATE TABLE IF NOT EXISTS eoi (
-                EOInumber INT AUTO_INCREMENT PRIMARY KEY,
-                JobRefNum CHAR(5) NOT NULL,
-                FirstName VARCHAR(20) NOT NULL,
-                LastName VARCHAR(20) NOT NULL,
-                DOB CHAR(10) NOT NULL,
-                Gender ENUM('Male', 'Female', 'Other') NOT NULL,
-                StreetAddress VARCHAR(40) NOT NULL,
-                Town VARCHAR(40) NOT NULL,
-                State VARCHAR(4) NOT NULL, 
-                Postcode CHAR(4) NOT NULL,
-                Email VARCHAR(255) NOT NULL,
-                Phone VARCHAR(12) NOT NULL,
-                ProjectManagement BOOLEAN DEFAULT FALSE,
-                DataAnalysis BOOLEAN DEFAULT FALSE,
-                OtherSkills TEXT,
-                Status ENUM('New', 'Current', 'Final') DEFAULT 'New' 
-              );";
-
-            $result = @mysqli_query($conn, $query) or die("<p>Failed to create EOI table</p> $back_btn");
-
             $eoi_table = "eoi";
             if (isset($_POST['Search'])) {
                 $query = "SELECT * FROM $eoi_table";
@@ -112,21 +90,21 @@
                     echo "<div class='table__container'>";
                     echo "<table>";
                     echo "<tr>";
-                    echo "<th>EOInumber</th>";
-                    echo "<th>JobRefNum</th>";
-                    echo "<th>FirstName</th>";
-                    echo "<th>LastName</th>";
-                    echo "<th>DOB</th>";
+                    echo "<th>EOI number</th>";
+                    echo "<th>Job Reference Number</th>";
+                    echo "<th>First Name</th>";
+                    echo "<th>Last Name</th>";
+                    echo "<th>DoB</th>";
                     echo "<th>Gender</th>";
-                    echo "<th>StreetAddress</th>";
+                    echo "<th>Street Address</th>";
                     echo "<th>Town</th>";
                     echo "<th>State</th>";
                     echo "<th>Postcode</th>";
                     echo "<th>Email</th>";
                     echo "<th>Phone</th>";
-                    echo "<th>ProjectManagement</th>";
-                    echo "<th>DataAnalysis</th>";
-                    echo "<th>OtherSkills</th>";
+                    echo "<th>Project Management</th>";
+                    echo "<th>Data Analysis</th>";
+                    echo "<th>Other Skills</th>";
                     echo "<th>Status</th>";
                     echo "</tr>";
 
@@ -144,8 +122,8 @@
                         echo "<td>" . $row['Postcode'] . "</td>";
                         echo "<td>" . $row['Email'] . "</td>";
                         echo "<td>" . $row['Phone'] . "</td>";
-                        echo "<td>" . $row['ProjectManagement'] . "</td>";
-                        echo "<td>" . $row['DataAnalysis'] . "</td>";
+                        echo "<td>" . ($row['ProjectManagement'] == 1 ? "Yes" : "No") . "</td>";
+                        echo "<td>" . ($row['DataAnalysis'] == 1 ? "Yes" : "No") . "</td>";
                         echo "<td>" . $row['OtherSkills'] . "</td>";
                         echo "<td>" . $row['Status'] . "</td>";
                         echo "</tr>";
@@ -201,19 +179,6 @@
                 $keyRes = sanitize_input($conn, $_POST['KeyResponsibilities']);
                 $essReq = sanitize_input($conn, $_POST['EssentialRequirements']);
                 $preReq = sanitize_input($conn, $_POST['PreferableRequirements']);
-
-                $query = "CREATE TABLE IF NOT EXISTS job (
-                    JobRefNum CHAR(5) PRIMARY KEY,
-                    Title VARCHAR(100) NOT NULL,
-                    BriefDescription TEXT NOT NULL,
-                    SalaryRange VARCHAR(100) NOT NULL,
-                    ReportsTo VARCHAR(100) NOT NULL,
-                    KeyResponsibilities TEXT NOT NULL,
-                    EssentialRequirements TEXT NOT NULL,
-                    PreferableRequirements TEXT NOT NULL
-                );";
-
-                $result = @mysqli_query($conn, $query) or die("<p>Failed to create table</p> $back_btn");
 
                 // Check if JobRefNum already exists
                 $query = "SELECT * FROM job WHERE JobRefNum = '$jobRefNum'";

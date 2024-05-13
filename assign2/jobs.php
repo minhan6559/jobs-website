@@ -52,20 +52,25 @@
     <div class="jobs__content">
       <?php
       require_once './settings.php';
-      $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die('Failed to connect to the job database');
+
+      require_once 'settings.php';
+      $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p>");
+
+      $query = "CREATE TABLE IF NOT EXISTS job (
+            JobRefNum CHAR(5) PRIMARY KEY,
+            Title VARCHAR(100) NOT NULL,
+            BriefDescription TEXT NOT NULL,
+            SalaryRange VARCHAR(100) NOT NULL,
+            ReportsTo VARCHAR(100) NOT NULL,
+            KeyResponsibilities TEXT NOT NULL,
+            EssentialRequirements TEXT NOT NULL,
+            PreferableRequirements TEXT NOT NULL
+        );";
+
+      $result = @mysqli_query($conn, $query) or die("<p>Failed to create table</p> $back_btn");
+
       $query = 'SELECT * FROM job';
       $result = @mysqli_query($conn, $query) or die('Failed to retrieve job details');
-
-      // "CREATE TABLE IF NOT EXISTS job (
-      //   JobRefNum CHAR(5) PRIMARY KEY,
-      //   Title TEXT NOT NULL,
-      //   BriefDescription TEXT NOT NULL,
-      //   SalaryRange TEXT NOT NULL,
-      //   ReportsTo TEXT NOT NULL,
-      //   KeyResponsibilities TEXT NOT NULL,
-      //   EssentialRequirements TEXT NOT NULL,
-      //   PreferableRequirements TEXT NOT NULL
-      // );"
 
       if (mysqli_num_rows($result) == 0) {
         echo '<h2>No jobs available</h2>';

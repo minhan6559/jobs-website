@@ -20,7 +20,45 @@
 
 <body>
     <!-- Header -->
-    <?php include 'header.inc'; ?>
+    <?php
+    include 'header.inc';
+    require_once 'settings.php';
+    $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p>");
+
+    $query = "CREATE TABLE IF NOT EXISTS eoi (
+        EOInumber INT AUTO_INCREMENT PRIMARY KEY,
+        JobRefNum CHAR(5) NOT NULL,
+        FirstName VARCHAR(20) NOT NULL,
+        LastName VARCHAR(20) NOT NULL,
+        DOB CHAR(10) NOT NULL,
+        Gender ENUM('Male', 'Female', 'Other') NOT NULL,
+        StreetAddress VARCHAR(40) NOT NULL,
+        Town VARCHAR(40) NOT NULL,
+        State VARCHAR(4) NOT NULL, 
+        Postcode CHAR(4) NOT NULL,
+        Email VARCHAR(255) NOT NULL,
+        Phone VARCHAR(12) NOT NULL,
+        ProjectManagement BOOLEAN DEFAULT FALSE,
+        DataAnalysis BOOLEAN DEFAULT FALSE,
+        OtherSkills TEXT,
+        Status ENUM('New', 'Current', 'Final') DEFAULT 'New' 
+      );";
+
+    $result = @mysqli_query($conn, $query) or die("<p>Failed to create EOI table</p> $back_btn");
+
+    $query = "CREATE TABLE IF NOT EXISTS job (
+            JobRefNum CHAR(5) PRIMARY KEY,
+            Title VARCHAR(100) NOT NULL,
+            BriefDescription TEXT NOT NULL,
+            SalaryRange VARCHAR(100) NOT NULL,
+            ReportsTo VARCHAR(100) NOT NULL,
+            KeyResponsibilities TEXT NOT NULL,
+            EssentialRequirements TEXT NOT NULL,
+            PreferableRequirements TEXT NOT NULL
+        );";
+
+    $result = @mysqli_query($conn, $query) or die("<p>Failed to create table</p> $back_btn");
+    ?>
 
     <main>
         <div class="form__container">
@@ -53,8 +91,6 @@
                             <label for="all_jobs_search" class="skill__label">All</label>
 
                             <?php
-                            require_once 'settings.php';
-                            $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p>");
                             $query = "SELECT JobRefNum FROM job";
                             $result = @mysqli_query($conn, $query) or die("<p>Unable to find the Job Reference Numbers</p>");
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -63,7 +99,6 @@
                             }
 
                             mysqli_free_result($result);
-                            mysqli_close($conn);
                             ?>
                         </div>
                     </fieldset>
@@ -126,8 +161,6 @@
                         <legend>*Job Position:</legend>
                         <div class="skills__field">
                             <?php
-                            require_once 'settings.php';
-                            $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p>");
                             $query = "SELECT JobRefNum FROM job";
                             $result = @mysqli_query($conn, $query) or die("<p>Unable to find the Job Reference Numbers</p>");
 
@@ -148,7 +181,6 @@
                             }
 
                             mysqli_free_result($result);
-                            mysqli_close($conn);
                             ?>
                         </div>
                     </fieldset>
@@ -271,8 +303,6 @@
                         <legend>*Job Reference Number:</legend>
                         <div class="skills__field">
                             <?php
-                            require_once 'settings.php';
-                            $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p>");
                             $query = "SELECT JobRefNum FROM job";
                             $result = @mysqli_query($conn, $query) or die("<p>Unable to find the Job Reference Numbers</p>");
 
@@ -293,7 +323,6 @@
                             }
 
                             mysqli_free_result($result);
-                            mysqli_close($conn);
                             ?>
                         </div>
                     </fieldset>
@@ -308,7 +337,10 @@
     </main>
 
     <!-- Footer -->
-    <?php include 'footer.inc'; ?>
+    <?php
+    include 'footer.inc';
+    mysqli_close($conn);
+    ?>
 </body>
 
 </html>
