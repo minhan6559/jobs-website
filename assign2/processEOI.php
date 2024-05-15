@@ -198,7 +198,7 @@
                 echo "Error creating table: " . mysqli_error($conn);
                 echo '</div>';
             } else {
-                // Insert
+                // Insert data into table
                 $query = "INSERT INTO eoi (JobRefNum, FirstName, LastName, DOB, Gender, StreetAddress, Town, State, Postcode, Email, Phone, ProjectManagement, DataAnalysis, OtherSkills) VALUES ('$jobRefNumber', '$firstName', '$lastName', '$dob', '$gender', '$streetAddress', '$suburbTown', '$state', '$postcode', '$emailAddress', '$phoneNumber', $project_management, $data_analysis, '$otherSkills')";
 
                 $result = mysqli_query($conn, $query);
