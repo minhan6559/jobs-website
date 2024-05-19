@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Process EOI</title>
+    <meta name="description" content="Page to process EOI application">
+    <meta name="keywords" content="eoi, application">
+    <meta name="author" content="TechPulse">
 
     <!-- Embed fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

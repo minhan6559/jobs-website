@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apply</title>
+  <meta name="description" content="Apply for a job">
+  <meta name="keywords" content="job application, form">
+  <meta name="author" content="TechPulse">
 
   <!-- Embed fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

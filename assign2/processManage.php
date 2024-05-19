@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
+    <meta name="description" content="Page to process the manage query">
+    <meta name="keywords" content="mysql, manage">
+    <meta name="author" content="TechPulse">
 
     <!-- Embed fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

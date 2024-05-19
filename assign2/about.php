@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>About Us</title>
+  <meta name="description" content="About the TechPulse team">
+  <meta name="keywords" content="about us, team member, TechPulse">
+  <meta name="author" content="TechPulse">
 
   <!-- Embed fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
