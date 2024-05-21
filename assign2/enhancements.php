@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enhancements</title>
+  <meta name="description" content="CSS enhacements">
+  <meta name="keywords" content="html, css, enhacements">
+  <meta name="author" content="TechPulse">
 
   <!-- Embed fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

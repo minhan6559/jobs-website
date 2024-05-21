@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage</title>
+    <meta name="description" content="Manage Page of TechPulse">
+    <meta name="keywords" content="manage, search, mysql">
+    <meta name="author" content="TechPulse">
 
     <!-- Embed fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,38 +106,42 @@
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-input-container-visible">
-                        <legend>*Choose a criteria to sort:</legend>
-                        <div class="skills__field">
-                            <input type="radio" id="EOInumber" name="crit" value="EOInumber" class="skill__input" checked>
-                            <label for="EOInumber" class="skill__label">EOI number</label>
-
-                            <input type="radio" id="fname_crit" name="crit" value="FirstName" class="skill__input">
-                            <label for="fname_crit" class="skill__label">First name</label>
-
-                            <input type="radio" id="lname_crit" name="crit" value="LastName" class="skill__input">
-                            <label for="lname_crit" class="skill__label">Last name</label>
-
-                            <input type="radio" id="gender_crit" name="crit" value="Gender" class="skill__input">
-                            <label for="gender_crit" class="skill__label">Gender</label>
-
-                            <input type="radio" id="state_crit" name="crit" value="State" class="skill__input">
-                            <label for="state_crit" class="skill__label">State</label>
-
-                            <input type="radio" id="postcode_crit" name="crit" value="Postcode" class="skill__input">
-                            <label for="postcode_crit" class="skill__label">Postcode</label>
-                        </div>
-                    </fieldset>
 
                     <fieldset class="form-input-container-visible">
-                        <legend>*Sort order:</legend>
-                        <div class="skills__field">
-                            <input type="radio" id="asc" name="sort" value="asc" class="skill__input" checked>
-                            <label for="asc" class="skill__label">Ascending</label>
+                        <legend>*Sort:</legend>
+                        <fieldset>
+                            <legend>Criteria:</legend>
+                            <div class="skills__field">
+                                <input type="radio" id="EOInumber" name="crit" value="EOInumber" class="skill__input" checked>
+                                <label for="EOInumber" class="skill__label">EOI number</label>
 
-                            <input type="radio" id="desc" name="sort" value="desc" class="skill__input">
-                            <label for="desc" class="skill__label">Descending</label>
-                        </div>
+                                <input type="radio" id="fname_crit" name="crit" value="FirstName" class="skill__input">
+                                <label for="fname_crit" class="skill__label">First name</label>
+
+                                <input type="radio" id="lname_crit" name="crit" value="LastName" class="skill__input">
+                                <label for="lname_crit" class="skill__label">Last name</label>
+
+                                <input type="radio" id="gender_crit" name="crit" value="Gender" class="skill__input">
+                                <label for="gender_crit" class="skill__label">Gender</label>
+
+                                <input type="radio" id="state_crit" name="crit" value="State" class="skill__input">
+                                <label for="state_crit" class="skill__label">State</label>
+
+                                <input type="radio" id="postcode_crit" name="crit" value="Postcode" class="skill__input">
+                                <label for="postcode_crit" class="skill__label">Postcode</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Order:</legend>
+                            <div class="skills__field">
+                                <input type="radio" id="asc" name="sort" value="asc" class="skill__input" checked>
+                                <label for="asc" class="skill__label">Ascending</label>
+
+                                <input type="radio" id="desc" name="sort" value="desc" class="skill__input">
+                                <label for="desc" class="skill__label">Descending</label>
+                            </div>
+                        </fieldset>
                     </fieldset>
 
 
