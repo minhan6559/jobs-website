@@ -87,6 +87,7 @@ button {
   margin: 0 2.5rem;
   flex-wrap: wrap;
   flex-direction: column;
+  text-align: center;
 }
 
 .result__container h1 {

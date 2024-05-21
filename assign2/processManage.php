@@ -212,7 +212,8 @@
                     $result = @mysqli_query($conn, $query) or die("<p>Failed to check if there is any EOIs</p> $back_btn");
 
                     if (mysqli_num_rows($result) != 0) {
-                        echo ("<p>There are EOIs associated with this job</p>");
+                        echo ("<p>There are EOIs associated with this job. <br>
+                            Delete all related EOIs before proceeding with the job deletion</p>");
                         mysqli_free_result($result);
                     } else {
                         mysqli_free_result($result);
