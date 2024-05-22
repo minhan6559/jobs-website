@@ -32,7 +32,7 @@
         return $data;
     }
     //Disables direct connections to processEOI.php
-    if (!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "apply.php") {
+    if ($_SERVER['REQUEST_METHOD'] != 'POST' || !isset($_SERVER['HTTP_REFERER'])) {
         header('location:apply.php');
         exit;
     }
@@ -202,9 +202,14 @@
                 echo '</div>';
             } else {
                 // Insert data into table
-                $query = "INSERT INTO eoi (JobRefNum, FirstName, LastName, DOB, Gender, StreetAddress, Town, State, Postcode, Email, Phone, ProjectManagement, DataAnalysis, OtherSkills) VALUES ('$jobRefNumber', '$firstName', '$lastName', '$dob', '$gender', '$streetAddress', '$suburbTown', '$state', '$postcode', '$emailAddress', '$phoneNumber', $project_management, $data_analysis, '$otherSkills')";
+                $stmt = mysqli_prepare($conn, "INSERT INTO eoi (JobRefNum, FirstName, LastName, DOB, Gender, StreetAddress, Town, State, Postcode, Email, Phone, ProjectManagement, DataAnalysis, OtherSkills) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-                $result = mysqli_query($conn, $query);
+                $types = "sssssssssssiis";
+
+                mysqli_stmt_bind_param($stmt, $types, $jobRefNumber, $firstName, $lastName, $dob, $gender, $streetAddress, $suburbTown, $state, $postcode, $emailAddress, $phoneNumber, $project_management, $data_analysis, $otherSkills);
+
+                $result = mysqli_stmt_execute($stmt);
 
                 if ($result) {
                     $eoinumber = mysqli_insert_id($conn);
@@ -216,6 +221,8 @@
                     echo "Error: " . $query . "<br>" . mysqli_error($conn);
                     echo '</div>';
                 }
+
+                mysqli_stmt_close($stmt);
             }
         }
     }

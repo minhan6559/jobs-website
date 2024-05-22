@@ -24,7 +24,7 @@
 <body>
     <!-- Header -->
     <?php
-    if (!isset($_SERVER['HTTP_REFERER'])  || $_SERVER['HTTP_REFERER'] == "manage.php") {
+    if ($_SERVER['REQUEST_METHOD'] != 'POST' || !isset($_SERVER['HTTP_REFERER'])) {
         header('location:manage.php');
         exit;
     }
