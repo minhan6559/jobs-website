@@ -71,7 +71,7 @@
             $errors[] = "Job reference number must be exactly 5 alphanumeric characters.";
         }
 
-        $query = "SELECT * FROM job WHERE JobRefNum = '$jobRefNumber'";
+        $query = "SELECT * FROM job WHERE RefNum = '$jobRefNumber'";
         $result = @mysqli_query($conn, $query) or die("<p>Unable to execute the query</p>");
 
         if (mysqli_num_rows($result) === 0) {

@@ -50,7 +50,7 @@
     $result = @mysqli_query($conn, $query) or die("<p>Failed to create EOI table</p> $back_btn");
 
     $query = "CREATE TABLE IF NOT EXISTS job (
-            JobRefNum CHAR(5) PRIMARY KEY,
+            RefNum CHAR(5) PRIMARY KEY,
             Title VARCHAR(100) NOT NULL,
             BriefDescription TEXT NOT NULL,
             SalaryRange VARCHAR(100) NOT NULL,
@@ -94,11 +94,11 @@
                             <label for="all_jobs_search" class="skill__label">All</label>
 
                             <?php
-                            $query = "SELECT JobRefNum FROM job";
+                            $query = "SELECT RefNum FROM job";
                             $result = @mysqli_query($conn, $query) or die("<p>Unable to find the Job Reference Numbers</p>");
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<input type=\"radio\" id=\"" . $row['JobRefNum'] . "_search\" name=\"job_search\" value=\"" . $row['JobRefNum'] . "\" class=\"skill__input\">";
-                                echo "<label for=\"" . $row['JobRefNum'] . "_search\" class=\"skill__label\">" . $row['JobRefNum'] . "</label>";
+                                echo "<input type=\"radio\" id=\"" . $row['RefNum'] . "_search\" name=\"job_search\" value=\"" . $row['RefNum'] . "\" class=\"skill__input\">";
+                                echo "<label for=\"" . $row['RefNum'] . "_search\" class=\"skill__label\">" . $row['RefNum'] . "</label>";
                             }
 
                             mysqli_free_result($result);
@@ -168,7 +168,7 @@
                         <legend>*Job Position:</legend>
                         <div class="skills__field">
                             <?php
-                            $query = "SELECT JobRefNum FROM job";
+                            $query = "SELECT RefNum FROM job";
                             $result = @mysqli_query($conn, $query) or die("<p>Unable to find the Job Reference Numbers</p>");
 
                             if (mysqli_num_rows($result) == 0) {
@@ -177,13 +177,13 @@
                                 $i = 0;
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     if ($i == 0) {
-                                        echo "<input type=\"radio\" id=\"" . $row['JobRefNum'] . "_del_eoi\" name=\"job_del_eoi\" value=\"" . $row['JobRefNum'] . "\" class=\"skill__input\" checked>";
+                                        echo "<input type=\"radio\" id=\"" . $row['RefNum'] . "_del_eoi\" name=\"job_del_eoi\" value=\"" . $row['RefNum'] . "\" class=\"skill__input\" checked>";
                                         $i++;
                                     } else {
-                                        echo "<input type=\"radio\" id=\"" . $row['JobRefNum'] . "_del_eoi\" name=\"job_del_eoi\" value=\"" . $row['JobRefNum'] . "\" class=\"skill__input\">";
+                                        echo "<input type=\"radio\" id=\"" . $row['RefNum'] . "_del_eoi\" name=\"job_del_eoi\" value=\"" . $row['RefNum'] . "\" class=\"skill__input\">";
                                     }
 
-                                    echo "<label for=\"" . $row['JobRefNum'] . "_del_eoi\" class=\"skill__label\">" . $row['JobRefNum'] . "</label>";
+                                    echo "<label for=\"" . $row['RefNum'] . "_del_eoi\" class=\"skill__label\">" . $row['RefNum'] . "</label>";
                                 }
                             }
 
@@ -248,8 +248,8 @@
                     </div>
 
                     <fieldset class="form-input-container">
-                        <label for="JobRefNum">*Job Reference Number:</label>
-                        <input type="text" id="JobRefNum" name="JobRefNum" pattern="[A-Za-z0-9]{5}" title="Exactly 5 alphanumeric characters" placeholder="e.g ABC12" required>
+                        <label for="RefNum">*Job Reference Number:</label>
+                        <input type="text" id="RefNum" name="JobRefNum" pattern="[A-Za-z0-9]{5}" title="Exactly 5 alphanumeric characters" placeholder="e.g ABC12" required>
                         <span class="error-message" id="jobRef-error"></span>
                     </fieldset>
 
@@ -310,7 +310,7 @@
                         <legend>*Job Reference Number:</legend>
                         <div class="skills__field">
                             <?php
-                            $query = "SELECT JobRefNum FROM job";
+                            $query = "SELECT RefNum FROM job";
                             $result = @mysqli_query($conn, $query) or die("<p>Unable to find the Job Reference Numbers</p>");
 
                             if (mysqli_num_rows($result) == 0) {
@@ -319,13 +319,13 @@
                                 $i = 0;
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     if ($i == 0) {
-                                        echo "<input type=\"radio\" id=\"" . $row['JobRefNum'] . "_del\" name=\"job_del\" value=\"" . $row['JobRefNum'] . "\" class=\"skill__input\" checked>";
+                                        echo "<input type=\"radio\" id=\"" . $row['RefNum'] . "_del\" name=\"job_del\" value=\"" . $row['RefNum'] . "\" class=\"skill__input\" checked>";
                                         $i++;
                                     } else {
-                                        echo "<input type=\"radio\" id=\"" . $row['JobRefNum'] . "_del\" name=\"job_del\" value=\"" . $row['JobRefNum'] . "\" class=\"skill__input\">";
+                                        echo "<input type=\"radio\" id=\"" . $row['RefNum'] . "_del\" name=\"job_del\" value=\"" . $row['RefNum'] . "\" class=\"skill__input\">";
                                     }
 
-                                    echo "<label for=\"" . $row['JobRefNum'] . "_del\" class=\"skill__label\">" . $row['JobRefNum'] . "</label>";
+                                    echo "<label for=\"" . $row['RefNum'] . "_del\" class=\"skill__label\">" . $row['RefNum'] . "</label>";
                                 }
                             }
 

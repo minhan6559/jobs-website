@@ -42,7 +42,7 @@
           echo '<li class="menu"><a href="#">No jobs available</a></li>';
         } else {
           while ($row = mysqli_fetch_assoc($result)) {
-            echo '<li class="menu"><a href="#' . $row['JobRefNum'] . '">' . $row['Title'] . '</a></li>';
+            echo '<li class="menu"><a href="#' . $row['RefNum'] . '">' . $row['Title'] . '</a></li>';
           }
         }
         mysqli_free_result($result);
@@ -60,7 +60,7 @@
       $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p>");
 
       $query = "CREATE TABLE IF NOT EXISTS job (
-            JobRefNum CHAR(5) PRIMARY KEY,
+            RefNum CHAR(5) PRIMARY KEY,
             Title VARCHAR(100) NOT NULL,
             BriefDescription TEXT NOT NULL,
             SalaryRange VARCHAR(100) NOT NULL,
@@ -79,13 +79,13 @@
         echo '<h2>No jobs available</h2>';
       } else {
         while ($row = mysqli_fetch_assoc($result)) {
-          echo '<section id="' . $row['JobRefNum'] . '">';
-          echo '<h2><strong>' . $row['Title'] . ' (' . $row['JobRefNum'] . ')</strong></h2>';
+          echo '<section id="' . $row['RefNum'] . '">';
+          echo '<h2><strong>' . $row['Title'] . ' (' . $row['RefNum'] . ')</strong></h2>';
           echo '<h3>Brief Description</h3>';
           echo '<p>' . $row['BriefDescription'] . '</p>';
           echo '<br />';
           echo '<h3>Key Information</h3>';
-          echo '<p><strong>Position Description Reference Number:</strong> ' . $row['JobRefNum'] . '</p>';
+          echo '<p><strong>Position Description Reference Number:</strong> ' . $row['RefNum'] . '</p>';
           echo '<p><strong>Salary Range:</strong> ' . $row['SalaryRange'] . '</p>';
           echo '<p><strong>Reporting To:</strong> ' . $row['ReportsTo'] . '</p>';
           echo '<br />';

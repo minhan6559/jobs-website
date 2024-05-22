@@ -184,7 +184,7 @@
                 $preReq = sanitize_input($conn, $_POST['PreferableRequirements']);
 
                 // Check if JobRefNum already exists
-                $query = "SELECT * FROM job WHERE JobRefNum = '$jobRefNum'";
+                $query = "SELECT * FROM job WHERE RefNum = '$jobRefNum'";
                 $result = @mysqli_query($conn, $query) or die("<p>Failed to check if Job Reference Number exists</p> $back_btn");
 
                 if (mysqli_num_rows($result) != 0) {
@@ -192,7 +192,7 @@
                     mysqli_free_result($result);
                 } else {
                     mysqli_free_result($result);
-                    $query = "INSERT INTO job (JobRefNum, Title, BriefDescription, SalaryRange, ReportsTo, KeyResponsibilities, EssentialRequirements, PreferableRequirements) VALUES ('$jobRefNum', '$title', '$briefDesc', '$salary', '$reportsTo', '$keyRes', '$essReq', '$preReq')";
+                    $query = "INSERT INTO job (RefNum, Title, BriefDescription, SalaryRange, ReportsTo, KeyResponsibilities, EssentialRequirements, PreferableRequirements) VALUES ('$jobRefNum', '$title', '$briefDesc', '$salary', '$reportsTo', '$keyRes', '$essReq', '$preReq')";
 
                     $result = @mysqli_query($conn, $query) or die("<p>" . mysqli_error($conn) . "</p> $back_btn");
 
@@ -220,7 +220,7 @@
                         mysqli_free_result($result);
                     } else {
                         mysqli_free_result($result);
-                        $query = "DELETE FROM job WHERE JobRefNum = '$job_del'";
+                        $query = "DELETE FROM job WHERE RefNum = '$job_del'";
                         $result = @mysqli_query($conn, $query) or die("<p>Failed to delete record</p> $back_btn");
 
                         if (mysqli_affected_rows($conn) == 0) {
