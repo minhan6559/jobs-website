@@ -32,7 +32,7 @@
         return $data;
     }
     //Disables direct connections to processEOI.php
-    if (!isset($_SERVER['HTTP_REFERER'])) {
+    if (!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "apply.php") {
         header('location:apply.php');
         exit;
     }
@@ -72,7 +72,7 @@
         }
 
         $query = "SELECT * FROM job WHERE JobRefNum = '$jobRefNumber'";
-        $result = mysqli_query($conn, $query);
+        $result = @mysqli_query($conn, $query) or die("<p>Unable to execute the query</p>");
 
         if (mysqli_num_rows($result) === 0) {
             $errors[] = "Job reference number does not exist.";
