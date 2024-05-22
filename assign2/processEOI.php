@@ -123,25 +123,30 @@
             $errors[] = "Invalid state.";
         }
 
+        $postcode = $postcode * 1;
+
         // Postcode exactly 4 digits – matches state
         if (!preg_match('/^\d{4}$/', $postcode)) {
             $errors[] = "Postcode must be exactly 4 digits.";
-        } elseif ($state === 'VIC' && substr($postcode, 0, 1) !== '3') {
-            $errors[] = "Postcode does not match state.";
-        } elseif ($state === 'NSW' && substr($postcode, 0, 1) !== '1') {
-            $errors[] = "Postcode does not match state.";
-        } elseif ($state === 'QLD' && substr($postcode, 0, 1) !== '4') {
-            $errors[] = "Postcode does not match state.";
-        } elseif ($state === 'NT' && substr($postcode, 0, 1) !== '0') {
-            $errors[] = "Postcode does not match state.";
-        } elseif ($state === 'WA' && substr($postcode, 0, 1) !== '6') {
-            $errors[] = "Postcode does not match state.";
-        } elseif ($state === 'SA' && substr($postcode, 0, 1) !== '5') {
-            $errors[] = "Postcode does not match state.";
-        } elseif ($state === 'TAS' && substr($postcode, 0, 1) !== '7') {
-            $errors[] = "Postcode does not match state.";
-        } elseif ($state === 'ACT' && substr($postcode, 0, 1) !== '0') {
-            $errors[] = "Postcode does not match state.";
+        } else {
+            $postcode = (int)$postcode;
+            if ($state === 'VIC' && ($postcode < 3000 || $postcode > 3999)) {
+                $errors[] = "Postcode does not match state.";
+            } elseif ($state === 'NSW' && !(($postcode >= 2000 && $postcode <= 2599)||($postcode >= 2619 && $postcode <= 2899)||($postcode >= 2921 && $postcode <= 2999))) {
+                $errors[] = "Postcode does not match state.";
+            } elseif ($state === 'QLD' && ($postcode < 4000 || $postcode > 4999)) {
+                $errors[] = "Postcode does not match state.";
+            } elseif ($state === 'NT' && ($postcode < 800 || $postcode > 999)) {
+                $errors[] = "Postcode does not match state.";
+            } elseif ($state === 'WA' && ($postcode < 6000 || $postcode > 6797)) {
+                $errors[] = "Postcode does not match state.";
+            } elseif ($state === 'SA' && ($postcode < 5000 || $postcode > 5799)) {
+                $errors[] = "Postcode does not match state.";
+            } elseif ($state === 'TAS' && ($postcode < 7000 || $postcode > 7999)) {
+                $errors[] = "Postcode does not match state.";
+            } elseif ($state === 'ACT' && !(($postcode >= 2600 && $postcode <= 2618) ||($postcode >= 2900 && $postcode <= 2920))) {
+                $errors[] = "Postcode does not match state.";
+            }
         }
 
         // Email address validate format
