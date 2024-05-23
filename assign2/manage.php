@@ -45,7 +45,7 @@
         DataAnalysis BOOLEAN DEFAULT FALSE,
         OtherSkills TEXT,
         Status ENUM('New', 'Current', 'Final') DEFAULT 'New' 
-      );";
+    );";
 
     $result = @mysqli_query($conn, $query) or die("<p>Failed to create EOI table</p> $back_btn");
 
@@ -58,7 +58,7 @@
             KeyResponsibilities TEXT NOT NULL,
             EssentialRequirements TEXT NOT NULL,
             PreferableRequirements TEXT NOT NULL
-        );";
+    );";
 
     $result = @mysqli_query($conn, $query) or die("<p>Failed to create table</p> $back_btn");
     ?>
