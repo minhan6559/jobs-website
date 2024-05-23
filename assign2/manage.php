@@ -64,6 +64,7 @@
     ?>
 
     <main>
+        <!-- Search EOIs form -->
         <div class="form__container">
             <!-- Form -->
             <div class="form">
@@ -94,6 +95,7 @@
                             <label for="all_jobs_search" class="skill__label">All</label>
 
                             <?php
+                            // Get all job reference numbers
                             $query = "SELECT RefNum FROM job";
                             $result = @mysqli_query($conn, $query) or die("<p>Unable to find the Job Reference Numbers</p>");
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -153,7 +155,7 @@
             </div>
         </div>
 
-
+        <!-- Add EOIs form -->
         <div class="form__container">
             <!-- Form -->
             <div class="form">
@@ -168,6 +170,7 @@
                         <legend>*Job Position:</legend>
                         <div class="skills__field">
                             <?php
+                            // Get all job reference numbers
                             $query = "SELECT RefNum FROM job";
                             $result = @mysqli_query($conn, $query) or die("<p>Unable to find the Job Reference Numbers</p>");
 
@@ -200,6 +203,7 @@
             </div>
         </div>
 
+        <!-- Change status form -->
         <div class="form__container">
             <!-- Form -->
             <div class="form">
@@ -237,6 +241,7 @@
             </div>
         </div>
 
+        <!-- Add Job Description form -->
         <div class="form__container">
             <!-- Form -->
             <div class="form">
@@ -296,6 +301,7 @@
             </div>
         </div>
 
+        <!-- Delete job description form -->
         <div class="form__container">
             <!-- Form -->
             <div class="form">
@@ -310,6 +316,7 @@
                         <legend>*Job Reference Number:</legend>
                         <div class="skills__field">
                             <?php
+                            // Get all job reference numbers
                             $query = "SELECT RefNum FROM job";
                             $result = @mysqli_query($conn, $query) or die("<p>Unable to find the Job Reference Numbers</p>");
 

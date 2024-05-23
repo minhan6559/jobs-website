@@ -24,6 +24,7 @@
 <body>
     <!-- Header -->
     <?php
+    // Disallow direct access to this page
     if ($_SERVER['REQUEST_METHOD'] != 'POST' || !isset($_SERVER['HTTP_REFERER'])) {
         header('location:manage.php');
         exit;
@@ -46,7 +47,7 @@
 
             require_once 'settings.php';
 
-
+            // Back button
             $back_btn = "<div class=\"banner__press-container\">
             <a href=\"./manage.php\" class=\"banner__press\"><strong>Back to Manage Page</strong></a>
             </div>";
@@ -54,6 +55,8 @@
             $conn = @mysqli_connect($host, $user, $pwd, $sql_db) or die("<p>Unable to connect to the server</p> $back_btn");
 
             $eoi_table = "eoi";
+
+            // Search EOI form submission
             if (isset($_POST['Search'])) {
                 $query = "SELECT * FROM $eoi_table";
 
@@ -62,6 +65,7 @@
                 $lname_search = sanitize_input($conn, $_POST['lname_search']);
                 $job_search = $_POST['job_search'];
 
+                // Check if there is any search criteria
                 if ($fname_search != "" || $lname_search != "" || $job_search != "all") {
                     $query .= " WHERE ";
                     if ($fname_search != "") {
@@ -76,9 +80,11 @@
                     $query = substr($query, 0, -5);
                 }
 
+                // Get the sorting criteria
                 $query .= " ORDER BY ";
                 $query .= $_POST['crit'];
 
+                // Get the sorting order
                 if ($_POST['sort'] == "asc") {
                     $query .= " ASC";
                 } else {
@@ -90,6 +96,7 @@
                 if (mysqli_num_rows($result) == 0) {
                     echo "<p>No records found</p>";
                 } else {
+                    // Display the result in a table
                     echo "<div class='table__container'>";
                     echo "<table>";
                     echo "<tr>";
@@ -137,6 +144,7 @@
                 mysqli_free_result($result);
             }
 
+            // Delete EOI form submission
             if (isset($_POST['Delete_EOI'])) {
                 // Check if there is any jobs
                 $query = "SELECT * FROM job";
@@ -154,6 +162,7 @@
                 }
             }
 
+            // Change status form submission
             if (isset($_POST['Change'])) {
                 $eoi_num = sanitize_input($conn, $_POST['eoi_change']);
                 $status = $_POST['status_change'];
@@ -173,6 +182,7 @@
                 }
             }
 
+            // Add job form submission
             if (isset($_POST['Add'])) {
                 $jobRefNum = sanitize_input($conn, $_POST['JobRefNum']);
                 $title = sanitize_input($conn, $_POST['Title']);
@@ -200,6 +210,7 @@
                 }
             }
 
+            // Delete job form submission
             if (isset($_POST['Delete_Job'])) {
                 $query = "SELECT * FROM job";
                 $result = @mysqli_query($conn, $query) or die("<p>Failed to check if there is any jobs</p> $back_btn");
@@ -211,6 +222,7 @@
                     mysqli_free_result($result);
                     $job_del = sanitize_input($conn, $_POST['job_del']);
 
+                    // Check if there is any EOIs associated with the job
                     $query = "SELECT * FROM $eoi_table WHERE JobRefNum = '$job_del'";
                     $result = @mysqli_query($conn, $query) or die("<p>Failed to check if there is any EOIs</p> $back_btn");
 
@@ -220,6 +232,8 @@
                         mysqli_free_result($result);
                     } else {
                         mysqli_free_result($result);
+
+                        // Delete the job
                         $query = "DELETE FROM job WHERE RefNum = '$job_del'";
                         $result = @mysqli_query($conn, $query) or die("<p>Failed to delete record</p> $back_btn");
 

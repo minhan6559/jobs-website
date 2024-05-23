@@ -72,12 +72,14 @@
 
       $result = @mysqli_query($conn, $query) or die("<p>Failed to create table</p> $back_btn");
 
+      // Get all job details
       $query = 'SELECT * FROM job';
       $result = @mysqli_query($conn, $query) or die('Failed to retrieve job details');
 
       if (mysqli_num_rows($result) == 0) {
         echo '<h2>No jobs available</h2>';
       } else {
+        // Display job details
         while ($row = mysqli_fetch_assoc($result)) {
           echo '<section id="' . $row['RefNum'] . '">';
           echo '<h2><strong>' . $row['Title'] . ' (' . $row['RefNum'] . ')</strong></h2>';
