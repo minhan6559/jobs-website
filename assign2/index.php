@@ -39,6 +39,8 @@
             solutions. <br> <br>
             Click this <a href="https://youtu.be/JRUysmyHYm4?si=Tna4e8SbrLs_ZjeJ">Link</a> to watch the demonstration
             video for assignment 1. <br> <br>
+            Click this <a href="https://youtu.be/UJeI21RrSkE">Link</a> to watch the demonstration
+            video for assignment 2. <br> <br>
           </div>
           <div class="hero__search">
             <a href="./jobs.php" class="hero__text">
