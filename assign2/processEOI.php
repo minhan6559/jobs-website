@@ -90,16 +90,20 @@
         }
 
         // Date of birth dd/mm/yyyy between 15 and 80
-        $dobParts = explode('/', $dob);
-        if (count($dobParts) === 3 && checkdate($dobParts[1], $dobParts[0], $dobParts[2])) {
-            $dobTimestamp = strtotime("$dobParts[2]-$dobParts[1]-$dobParts[0]");
-            $minTimestamp = strtotime('-80 years');
-            $maxTimestamp = strtotime('-15 years');
-            if ($dobTimestamp < $minTimestamp || $dobTimestamp > $maxTimestamp) {
-                $errors[] = "Date of birth must be between 15 and 80 years ago.";
-            }
+        if (!preg_match('/^\d{2}\/\d{2}\/\d{4}$/', $dob)) {
+            $errors[] = "Invalid date of birth format (dd/mm/yyyy).";
         } else {
-            $errors[] = "Invalid date of birth format (dd/mm/yyyy) or invalid date.";
+            $dobParts = explode('/', $dob);
+            if (count($dobParts) === 3 && checkdate($dobParts[1], $dobParts[0], $dobParts[2])) {
+                $dobTimestamp = strtotime("$dobParts[2]-$dobParts[1]-$dobParts[0]");
+                $minTimestamp = strtotime('-80 years');
+                $maxTimestamp = strtotime('-15 years');
+                if ($dobTimestamp < $minTimestamp || $dobTimestamp > $maxTimestamp) {
+                    $errors[] = "Date of birth must be between 15 and 80 years ago.";
+                }
+            } else {
+                $errors[] = "Invalid date of birth format (dd/mm/yyyy) or invalid date.";
+            }
         }
 
         // Gender selected
